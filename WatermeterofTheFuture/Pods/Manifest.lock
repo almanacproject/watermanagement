@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.3.1)
+  - JBChartView (3.0.8)
+  - OGCSensorThings (0.0.7):
+    - Alamofire
+
+DEPENDENCIES:
+  - JBChartView
+  - OGCSensorThings
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  JBChartView: 47aa5c25d3231fe1b08b714ac470eba886558951
+  OGCSensorThings: bbec5ba6cb03cf00f286ae683f3ca27a9a339615
+
+COCOAPODS: 0.39.0

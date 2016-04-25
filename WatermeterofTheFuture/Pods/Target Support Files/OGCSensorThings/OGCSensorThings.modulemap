@@ -1,0 +1,6 @@
+framework module OGCSensorThings {
+  umbrella header "OGCSensorThings-umbrella.h"
+
+  export *
+  module * { export * }
+}
