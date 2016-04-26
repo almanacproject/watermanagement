@@ -49,7 +49,7 @@ let NoOfGlasses = 10
         
         
         // 5
-        var path = UIBezierPath(arcCenter: center,
+        let path = UIBezierPath(arcCenter: center,
                                 radius: radius/2 - arcWidth/2,
                                 startAngle: startAngle,
                                 endAngle: endPosition,
@@ -69,7 +69,7 @@ let NoOfGlasses = 10
         let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + minAngle
         
         //2 - draw the outer arc
-        var outlinePath = UIBezierPath(arcCenter: center,
+        let outlinePath = UIBezierPath(arcCenter: center,
                                        radius: bounds.width/2 - 2.5,
                                        startAngle: minAngle,
                                        endAngle: outlineEndAngle,
@@ -102,7 +102,7 @@ let NoOfGlasses = 10
         let markerSize:CGFloat = 10.0
         
         //2 - the marker rectangle positioned at the top left
-        var markerPath = UIBezierPath(rect:
+        let markerPath = UIBezierPath(rect:
             CGRect(x: -markerWidth/2,
                 y: 0,
                 width: markerWidth,
@@ -118,7 +118,7 @@ let NoOfGlasses = 10
             CGContextSaveGState(context)
             
             //5 - calculate the rotation angle
-            var angle = arcLengthPerGlass * CGFloat(i) + minAngle - π/2
+            let angle = arcLengthPerGlass * CGFloat(i) + minAngle - π/2
             
             //rotate and translate
             CGContextRotateCTM(context, angle)

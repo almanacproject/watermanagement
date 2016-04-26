@@ -9,19 +9,26 @@
 /* Begin PBXBuildFile section */
 		7A074A42936ABAF2DD07B2A6 /* Pods_My_Water.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CD0DD89301B650C5C723F1 /* Pods_My_Water.framework */; };
 		E91D64D11CC75B6000F6EF83 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D64D01CC75B6000F6EF83 /* Circle.swift */; };
+		E97F74571CCE3606007F503A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74561CCE3606007F503A /* LoginVC.swift */; };
+		E97F74591CCE363A007F503A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74581CCE363A007F503A /* UserProfile.swift */; };
+		E97F745D1CCE3850007F503A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F745C1CCE3850007F503A /* GraphView.swift */; };
+		E9B0F4941CCF58A70058193A /* WaterEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0F4931CCF58A70058193A /* WaterEventCell.swift */; };
+		E9B0F4961CCF5A000058193A /* AlertTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0F4951CCF5A000058193A /* AlertTVC.swift */; };
+		E9B0F49B1CCF60250058193A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0F49A1CCF60250058193A /* Alert.swift */; };
 		E9C1C8141CCE00F00050FF5D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C1C8131CCE00F00050FF5D /* Social.framework */; };
 		E9C1C8171CCE0A7A0050FF5D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C1C8151CCE0A7A0050FF5D /* FBSDKCoreKit.framework */; };
 		E9C1C8181CCE0A7B0050FF5D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C1C8161CCE0A7A0050FF5D /* FBSDKShareKit.framework */; };
 		E9C1C81A1CCE13280050FF5D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C1C8191CCE13280050FF5D /* FBSDKLoginKit.framework */; };
 		E9D0A9FA1CC0BA5A0014309B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A9F91CC0BA5A0014309B /* AppDelegate.swift */; };
-		E9D0A9FC1CC0BA5A0014309B /* TodaysConsumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A9FB1CC0BA5A0014309B /* TodaysConsumption.swift */; };
-		E9D0A9FE1CC0BA5A0014309B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A9FD1CC0BA5A0014309B /* SecondViewController.swift */; };
+		E9D0A9FC1CC0BA5A0014309B /* TodaysConsumptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A9FB1CC0BA5A0014309B /* TodaysConsumptionVC.swift */; };
+		E9D0A9FE1CC0BA5A0014309B /* GraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A9FD1CC0BA5A0014309B /* GraphVC.swift */; };
 		E9D0AA011CC0BA5A0014309B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D0A9FF1CC0BA5A0014309B /* Main.storyboard */; };
 		E9D0AA031CC0BA5A0014309B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D0AA021CC0BA5A0014309B /* Assets.xcassets */; };
 		E9D0AA061CC0BA5A0014309B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D0AA041CC0BA5A0014309B /* LaunchScreen.storyboard */; };
 		E9D0AA111CC0BA5A0014309B /* WatermeterofTheFutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0AA101CC0BA5A0014309B /* WatermeterofTheFutureTests.swift */; };
 		E9D0AA1C1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0AA1B1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift */; };
 		E9D0AA2A1CC0BDA30014309B /* Glass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0AA291CC0BDA30014309B /* Glass.swift */; };
+		E9E4352F1CCF8ACE0012B59D /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E4352E1CCF8ACE0012B59D /* WindowsAzureMessaging.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +53,20 @@
 		43CD0DD89301B650C5C723F1 /* Pods_My_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BF7FC70F4E797BE8859428 /* Pods-My Water.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Water.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Water/Pods-My Water.release.xcconfig"; sourceTree = "<group>"; };
 		E91D64D01CC75B6000F6EF83 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		E97F74561CCE3606007F503A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E97F74581CCE363A007F503A /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E97F745C1CCE3850007F503A /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E9B0F4931CCF58A70058193A /* WaterEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterEventCell.swift; sourceTree = "<group>"; };
+		E9B0F4951CCF5A000058193A /* AlertTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTVC.swift; sourceTree = "<group>"; };
+		E9B0F49A1CCF60250058193A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E9C1C8131CCE00F00050FF5D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E9C1C8151CCE0A7A0050FF5D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E9C1C8161CCE0A7A0050FF5D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E9C1C8191CCE13280050FF5D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E9D0A9F61CC0BA5A0014309B /* My Water.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Water.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D0A9F91CC0BA5A0014309B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9D0A9FB1CC0BA5A0014309B /* TodaysConsumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysConsumption.swift; sourceTree = "<group>"; };
-		E9D0A9FD1CC0BA5A0014309B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E9D0A9FB1CC0BA5A0014309B /* TodaysConsumptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysConsumptionVC.swift; sourceTree = "<group>"; };
+		E9D0A9FD1CC0BA5A0014309B /* GraphVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVC.swift; sourceTree = "<group>"; };
 		E9D0AA001CC0BA5A0014309B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9D0AA021CC0BA5A0014309B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9D0AA051CC0BA5A0014309B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +78,8 @@
 		E9D0AA1B1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermeterofTheFutureUITests.swift; sourceTree = "<group>"; };
 		E9D0AA1D1CC0BA5A0014309B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9D0AA291CC0BDA30014309B /* Glass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glass.swift; sourceTree = "<group>"; };
+		E9E4352E1CCF8ACE0012B59D /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
+		E9E435301CCF8D2B0012B59D /* WTF-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WTF-Bridge.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E4352F1CCF8ACE0012B59D /* WindowsAzureMessaging.framework in Frameworks */,
 				E9C1C8181CCE0A7B0050FF5D /* FBSDKShareKit.framework in Frameworks */,
 				E9C1C8141CCE00F00050FF5D /* Social.framework in Frameworks */,
 				E9C1C81A1CCE13280050FF5D /* FBSDKLoginKit.framework in Frameworks */,
@@ -100,6 +116,7 @@
 		0DBEFE39BF08FC9C2619C23F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9E4352E1CCF8ACE0012B59D /* WindowsAzureMessaging.framework */,
 				E9C1C8191CCE13280050FF5D /* FBSDKLoginKit.framework */,
 				E9C1C8151CCE0A7A0050FF5D /* FBSDKCoreKit.framework */,
 				E9C1C8161CCE0A7A0050FF5D /* FBSDKShareKit.framework */,
@@ -116,6 +133,52 @@
 				E2BF7FC70F4E797BE8859428 /* Pods-My Water.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E97F745A1CCE3642007F503A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9B0F49A1CCF60250058193A /* Alert.swift */,
+				E97F74581CCE363A007F503A /* UserProfile.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E97F745B1CCE364D007F503A /* Assorted Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9D0A9F91CC0BA5A0014309B /* AppDelegate.swift */,
+				E9D0AA021CC0BA5A0014309B /* Assets.xcassets */,
+				E9D0AA041CC0BA5A0014309B /* LaunchScreen.storyboard */,
+				E9D0AA071CC0BA5A0014309B /* Info.plist */,
+				E9E435301CCF8D2B0012B59D /* WTF-Bridge.h */,
+			);
+			name = "Assorted Files";
+			sourceTree = "<group>";
+		};
+		E9B0F4971CCF5A0A0058193A /* AlertTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9B0F4931CCF58A70058193A /* WaterEventCell.swift */,
+				E9B0F4951CCF5A000058193A /* AlertTVC.swift */,
+			);
+			name = AlertTVC;
+			sourceTree = "<group>";
+		};
+		E9B0F4981CCF5A170058193A /* GraphVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9D0A9FD1CC0BA5A0014309B /* GraphVC.swift */,
+			);
+			name = GraphVC;
+			sourceTree = "<group>";
+		};
+		E9B0F4991CCF5A200058193A /* TodaysConsumptionVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9D0A9FB1CC0BA5A0014309B /* TodaysConsumptionVC.swift */,
+			);
+			name = TodaysConsumptionVC;
 			sourceTree = "<group>";
 		};
 		E9D0A9ED1CC0BA5A0014309B = {
@@ -143,13 +206,13 @@
 		E9D0A9F81CC0BA5A0014309B /* WatermeterofTheFuture */ = {
 			isa = PBXGroup;
 			children = (
-				E9D0A9F91CC0BA5A0014309B /* AppDelegate.swift */,
-				E9D0A9FB1CC0BA5A0014309B /* TodaysConsumption.swift */,
-				E9D0A9FD1CC0BA5A0014309B /* SecondViewController.swift */,
+				E97F74561CCE3606007F503A /* LoginVC.swift */,
+				E9B0F4991CCF5A200058193A /* TodaysConsumptionVC */,
+				E9B0F4981CCF5A170058193A /* GraphVC */,
+				E9B0F4971CCF5A0A0058193A /* AlertTVC */,
 				E9D0A9FF1CC0BA5A0014309B /* Main.storyboard */,
-				E9D0AA021CC0BA5A0014309B /* Assets.xcassets */,
-				E9D0AA041CC0BA5A0014309B /* LaunchScreen.storyboard */,
-				E9D0AA071CC0BA5A0014309B /* Info.plist */,
+				E97F745A1CCE3642007F503A /* Model */,
+				E97F745B1CCE364D007F503A /* Assorted Files */,
 				E9D0AA2B1CC0BDAA0014309B /* Graphics */,
 			);
 			path = WatermeterofTheFuture;
@@ -177,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D0AA291CC0BDA30014309B /* Glass.swift */,
+				E97F745C1CCE3850007F503A /* GraphView.swift */,
 				E91D64D01CC75B6000F6EF83 /* Circle.swift */,
 			);
 			name = Graphics;
@@ -254,6 +318,14 @@
 					E9D0A9F51CC0BA5A0014309B = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = MS98VENSMS;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E9D0AA0B1CC0BA5A0014309B = {
 						CreatedOnToolsVersion = 7.3;
@@ -367,9 +439,15 @@
 			files = (
 				E91D64D11CC75B6000F6EF83 /* Circle.swift in Sources */,
 				E9D0AA2A1CC0BDA30014309B /* Glass.swift in Sources */,
-				E9D0A9FE1CC0BA5A0014309B /* SecondViewController.swift in Sources */,
+				E97F74591CCE363A007F503A /* UserProfile.swift in Sources */,
+				E97F74571CCE3606007F503A /* LoginVC.swift in Sources */,
+				E9B0F4941CCF58A70058193A /* WaterEventCell.swift in Sources */,
+				E9D0A9FE1CC0BA5A0014309B /* GraphVC.swift in Sources */,
 				E9D0A9FA1CC0BA5A0014309B /* AppDelegate.swift in Sources */,
-				E9D0A9FC1CC0BA5A0014309B /* TodaysConsumption.swift in Sources */,
+				E9D0A9FC1CC0BA5A0014309B /* TodaysConsumptionVC.swift in Sources */,
+				E9B0F49B1CCF60250058193A /* Alert.swift in Sources */,
+				E9B0F4961CCF5A000058193A /* AlertTVC.swift in Sources */,
+				E97F745D1CCE3850007F503A /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +523,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -464,7 +543,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "2eea6ca8-f2ca-4b3b-b2b7-3ab3a5ee85ec";
 				SDKROOT = iphoneos;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "WatermeterofTheFuture/WTF-Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -491,6 +572,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -503,6 +585,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "2eea6ca8-f2ca-4b3b-b2b7-3ab3a5ee85ec";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -514,8 +597,9 @@
 			baseConfigurationReference = 2C2B29FE95731487E5C934B4 /* Pods-My Water.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thomas Gilbert (829226D7A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thomas Gilbert (829226D7A2)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -524,7 +608,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.alexandra.almanac.WatermeterofTheFuture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2eea6ca8-f2ca-4b3b-b2b7-3ab3a5ee85ec";
 			};
 			name = Debug;
 		};
@@ -533,8 +617,9 @@
 			baseConfigurationReference = E2BF7FC70F4E797BE8859428 /* Pods-My Water.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thomas Gilbert (829226D7A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thomas Gilbert (829226D7A2)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -543,7 +628,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.alexandra.almanac.WatermeterofTheFuture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2eea6ca8-f2ca-4b3b-b2b7-3ab3a5ee85ec";
 			};
 			name = Release;
 		};

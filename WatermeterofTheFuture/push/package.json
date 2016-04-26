@@ -1,0 +1,14 @@
+{
+  "name": "push",
+  "version": "1.0.0",
+  "description": "APN connector",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Thomas Gilbert",
+  "license": "ISC",
+  "dependencies": {
+    "azure": "^0.10.6"
+  }
+}
