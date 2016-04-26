@@ -3,7 +3,8 @@ var notificationHubService = azure.createNotificationHubService('ALMANAC', 'Endp
 
 var notification = {
     'message': 'A leak has been detected!',
-    'count': 0 // set badge iOS badge to this value
+    'type': 'LEAK',
+    'count': 1 // set badge iOS badge to this value
 };
 
 var responseHandler = (function (n) {
@@ -17,4 +18,4 @@ var responseHandler = (function (n) {
     };
 })(notification);
 
-notificationHubService.send('ALMANAC', notification, responseHandler);
+notificationHubService.send('gitte', notification, responseHandler);

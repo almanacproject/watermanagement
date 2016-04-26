@@ -11,11 +11,11 @@ import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     var usercontext: UserProfile?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Facebook tracking
@@ -29,29 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
     }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
+    
     func initializeNotificationServices() -> Void {
         let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -65,21 +47,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("User Registered!!!! \(deviceToken)")
-        let deviceTokenStr = convertDeviceTokenToString(deviceToken)
-        print(deviceTokenStr)
+        // let deviceTokenStr = convertDeviceTokenToString(deviceToken)
+        // print(deviceTokenStr)
         
         let HUBLISTENACCESS = "Endpoint=sb://watermeterofthefuture.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=QnMgdYYGr03u8XBS0WbLQwr0cMMxqpJQILY12luSPNY="
         let HUBNAME = "ALMANAC"
         
-        let hub = SBNotificationHub(connectionString:HUBLISTENACCESS,notificationHubPath:HUBNAME)
+        let hub = SBNotificationHub(connectionString:HUBLISTENACCESS, notificationHubPath:HUBNAME)
         
-        hub.registerNativeWithDeviceToken(deviceToken, tags:["ALMANAC"], completion: { (error) in
+        let tagArray: [AnyObject] = ["ALMANAC", "pub", "gitte"]
+        let deviceTags: NSSet = NSSet(array: tagArray);
+        
+        let templateBodyAPNS = "{\"aps\": { \"alert\": \"$(message)\", \"badge\": \"#(count)\"}, \"eventtype\" : \"$(type)\" }"
+        
+        hub.registerTemplateWithDeviceToken(deviceToken, name: "ALMANAC", jsonBodyTemplate: templateBodyAPNS, expiryTemplate: "0", tags: deviceTags as Set<NSObject>) { (error) in
             if (error != nil) {
-                print("Error registering for notification: \(error)")
+                print("Error registering for notification with AZURE: \(error)")
             } else {
-                print("Registration Status - WEEEEEE")
+                print("Registration success")
             }
-        })
+        }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -87,7 +74,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        // Reset counter
+        application.applicationIconBadgeNumber = 0
+        
         // display the userInfo
+        print("Notified: \(userInfo)")
         if let notification = userInfo["aps"] as? NSDictionary,
             let alert = notification["alert"] as? String {
             let alertCtrl = UIAlertController(title: "Water Event", message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
@@ -105,15 +96,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func convertDeviceTokenToString(deviceToken:NSData) -> String {
-        //  Convert binary Device Token to a String (and remove the <,> and white space charaters).
-        var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString("<", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-        
-        // Our API returns token in all uppercase, regardless how it was originally sent.
-        // To make the two consistent, I am uppercasing the token string here.
-        deviceTokenStr = deviceTokenStr.uppercaseString
-        return deviceTokenStr
-    }
+//    private func convertDeviceTokenToString(deviceToken:NSData) -> String {
+//        //  Convert binary Device Token to a String (and remove the <,> and white space charaters).
+//        var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+//        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString("<", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+//        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+//        
+//        // Our API returns token in all uppercase, regardless how it was originally sent.
+//        // To make the two consistent, I am uppercasing the token string here.
+//        deviceTokenStr = deviceTokenStr.uppercaseString
+//        return deviceTokenStr
+//    }
 }
