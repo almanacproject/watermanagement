@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Facebook tracking
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        print("didFinishLaunchingWithOptions")
         initializeNotificationServices()
         
         return true
@@ -31,10 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
+        // Reset counter for notification badges
+        application.applicationIconBadgeNumber = 0
+
         FBSDKAppEvents.activateApp()
     }
     
     func initializeNotificationServices() -> Void {
+        print("initializeNotificationServices")
         let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
@@ -74,9 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        // Reset counter
-        application.applicationIconBadgeNumber = 0
-        
         // display the userInfo
         print("Notified: \(userInfo)")
         if let notification = userInfo["aps"] as? NSDictionary,

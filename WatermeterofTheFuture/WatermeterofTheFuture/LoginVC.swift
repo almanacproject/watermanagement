@@ -53,7 +53,7 @@ class LoginVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let _ = defaults.stringForKey("useremail"), userpassword = defaults.stringForKey("userpassword") {
             txtPassword.text = userpassword
-        //    logOn()
+            //    logOn()
         }
     }
     
@@ -75,11 +75,11 @@ class LoginVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        if textField == self.txtUsername {
-//            txtPassword.becomeFirstResponder()
-//        } else if textField == self.txtPassword {
-//            logOn()
-//        }
+        //        if textField == self.txtUsername {
+        //            txtPassword.becomeFirstResponder()
+        //        } else if textField == self.txtPassword {
+        //            logOn()
+        //        }
         return true
     }
     
@@ -112,8 +112,8 @@ class LoginVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    }
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //    }
     
     // MARK: - Buttons
     
@@ -147,7 +147,7 @@ class LoginVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     
     func logOn() {
         // Could show spinner here, and disable all the UI while we wait
-
+        
         if let _ = self.txtPassword.text {
             activityIndicator.startAnimating()
             btnLogin.enabled = false
@@ -182,7 +182,7 @@ class LoginVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
             defaults.setObject(self.txtPassword.text, forKey: "userpassword")
             
             (UIApplication.sharedApplication().delegate as! AppDelegate).usercontext = user
-
+            
             performSegueWithIdentifier("login", sender: self)
         } else {
             // Nice bump if error ocoured
