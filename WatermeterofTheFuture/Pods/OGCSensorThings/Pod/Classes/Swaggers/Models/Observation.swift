@@ -8,25 +8,27 @@
 import Foundation
 
 
+/** An Observation is act of measuring or otherwise determining the value of a property [OGC and ISO 19156:2011]  */
 public class Observation: JSONEncodable {
 
+    /** The time instant or period of when the Observation happens. Note: Many resource-constrained sensing devices do not have a clock. As a result, a client may omit phenonmenonTime when POST new Observations, even though phenonmenonTime is a mandatory property. When a SensorThings service receives a POST Observations without phenonmenonTime, the service SHALL assign the current server time to the value of the phenomenonTime. */
+    public var phenomenonTime: String?
+    /** The estimated value of an ObservedProperty from the Observation. */
+    public var result: String?
+    /** The time of the Observation&#39;s result was generated. Note: Many resource-constrained sensing devices do not have a clock. As a result, a client may omit resultTime when POST new Observations, even though resultTime is a mandatory property. When a SensorThings service receives a POST Observations without resultTime, the service SHALL assign a null value to the resultTime. */
+    public var resultTime: NSDate?
+    /** Describes the quality of the result. */
+    public var resultQuality: String?
+    /** The time period during which the result may be used. TM_Period (ISO 8601 Time Interval string) */
+    public var validTime: NSDate?
+    /** Key-value pairs showing the environmental conditions during measurement. */
+    public var parameters: AnyObject?
     public var datastream: Datastream?
-    /** Navigation-Link is the relative URL that retrives content of related entities. */
-    public var navigationLink: String?
-    /** Association-Link is the relative URL showing the related entities in other entity types. Only the Self-Links of related entities are returned when resolving Association-Links. */
-    public var associationLink: String?
     public var featureOfInterest: FeatureOfInterest?
-    /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var selfLink: String?
-    /** The time point/period of when the observation happens. */
-    public var time: NSDate?
-    /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var ID: String?
-    /** The data type of the ResultValue. Service should by default set the ResultType as Measure unless users specify a different ResultType when creating an observation. */
-    public var resultType: String?
-    /** The estimated value of an observedProperty from the observation. */
-    public var resultValue: String?
-    public var sensor: Sensor?
+    /** link to related entities */
+    public var datastreamiotNavigationLink: String?
+    /** link to related entities */
+    public var featureOfInterestiotNavigationLink: String?
     
 
     public init() {}
@@ -34,16 +36,16 @@ public class Observation: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["datastream"] = self.datastream?.encodeToJSON()
-        nillableDictionary["navigationLink"] = self.navigationLink
-        nillableDictionary["associationLink"] = self.associationLink
-        nillableDictionary["featureOfInterest"] = self.featureOfInterest?.encodeToJSON()
-        nillableDictionary["selfLink"] = self.selfLink
-        nillableDictionary["time"] = self.time?.encodeToJSON()
-        nillableDictionary["ID"] = self.ID
-        nillableDictionary["resultType"] = self.resultType
-        nillableDictionary["resultValue"] = self.resultValue
-        nillableDictionary["sensor"] = self.sensor?.encodeToJSON()
+        nillableDictionary["phenomenonTime"] = self.phenomenonTime
+        nillableDictionary["result"] = self.result
+        nillableDictionary["resultTime"] = self.resultTime?.encodeToJSON()
+        nillableDictionary["resultQuality"] = self.resultQuality
+        nillableDictionary["validTime"] = self.validTime?.encodeToJSON()
+        nillableDictionary["parameters"] = self.parameters
+        nillableDictionary["Datastream"] = self.datastream?.encodeToJSON()
+        nillableDictionary["FeatureOfInterest"] = self.featureOfInterest?.encodeToJSON()
+        nillableDictionary["Datastream@iot.navigationLink"] = self.datastreamiotNavigationLink
+        nillableDictionary["FeatureOfInterest@iot.navigationLink"] = self.featureOfInterestiotNavigationLink
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

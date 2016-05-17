@@ -84,12 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-My Water/AeroGearHttp.framework"
+  install_framework "Pods-My Water/AeroGearOAuth2.framework"
   install_framework "Pods-My Water/Alamofire.framework"
   install_framework "Pods-My Water/JBChartView.framework"
   install_framework "Pods-My Water/OGCSensorThings.framework"
   install_framework "Pods-My Water/Starscream.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-My Water/AeroGearHttp.framework"
+  install_framework "Pods-My Water/AeroGearOAuth2.framework"
   install_framework "Pods-My Water/Alamofire.framework"
   install_framework "Pods-My Water/JBChartView.framework"
   install_framework "Pods-My Water/OGCSensorThings.framework"

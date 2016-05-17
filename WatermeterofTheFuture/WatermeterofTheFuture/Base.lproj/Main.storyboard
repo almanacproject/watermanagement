@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y71-es-eEd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -199,7 +199,7 @@
         <!--Settings-->
         <scene sceneID="rpl-Hb-b5p">
             <objects>
-                <viewController id="Rki-jd-cvO" sceneMemberID="viewController">
+                <viewController id="Rki-jd-cvO" customClass="SettingsVC" customModule="My_Water" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PbF-KK-A1D"/>
                         <viewControllerLayoutGuide type="bottom" id="8UQ-C5-GVv"/>
@@ -207,9 +207,33 @@
                     <view key="view" contentMode="scaleToFill" id="CQE-VI-gKv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0q-3G-OC6">
+                                <rect key="frame" x="20" y="28" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressButton:forEvent:" destination="Rki-jd-cvO" eventType="touchUpInside" id="Lqh-EB-eYk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHn-j0-gEJ">
+                                <rect key="frame" x="538" y="32" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="c0q-3G-OC6" secondAttribute="leading" id="XX8-7V-G2Q"/>
+                            <constraint firstItem="lHn-j0-gEJ" firstAttribute="top" secondItem="PbF-KK-A1D" secondAttribute="bottom" constant="12" id="XYX-qc-5pc"/>
+                            <constraint firstItem="c0q-3G-OC6" firstAttribute="top" secondItem="PbF-KK-A1D" secondAttribute="bottom" constant="8" id="jIf-Tc-kOy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lHn-j0-gEJ" secondAttribute="trailing" id="jdY-eh-z5D"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="first_old" id="WUp-b8-cCl"/>
+                    <connections>
+                        <outlet property="label" destination="lHn-j0-gEJ" id="Wnb-n4-Okr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiN-br-YvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

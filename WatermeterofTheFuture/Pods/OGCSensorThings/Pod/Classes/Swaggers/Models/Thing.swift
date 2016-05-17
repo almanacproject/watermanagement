@@ -10,20 +10,26 @@ import Foundation
 
 public class Thing: JSONEncodable {
 
-    /** Navigation-Link is the relative URL that retrives content of related entities. */
-    public var navigationLink: String?
-    /** Association-Link is the relative URL showing the related entities in other entity types. Only the Self-Links of related entities are returned when resolving Association-Links. */
-    public var associationLink: String?
+    /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
+    public var iotId: String?
+    /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
+    public var iotSelLink: String?
     /** This is the description of the thing entity. The content is open to accommodate changes to SensorML and to support other description languages. */
     public var description: String?
-    /** A thing can have zero-to-many datastreams. A datastream entity can only link to a thing as a collection of observations or properties. */
-    public var datastreams: [Datastream]?
-    /** A thing can locate at different geographical positions at different time points (multiple locations). Multiple things can locate at the same location at the same time. A thing may not have a location. */
+    /** a set of additional properties specified for the object in the form \&quot;name\&quot;:\&quot;value\&quot; pair */
+    public var properties: AnyObject?
+    /** The Location entity locates the Thing. Multiple Things MAY be located at the same Location. A Thing MAY not have a Location. A Thing SHOULD have only one Location. However, in some complex use cases, a Thing MAY have more than one Location representations. In such case, the Thing MAY have more than one Locations. These Locations SHALL have different encodingTypes and the encodingTypes SHOULD be in different spaces (e.g., one encodingType in Geometrical space and one encodingType in Topological space). (many-to-many) */
     public var locations: [Location]?
-    /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var selfLink: String?
-    /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var ID: String?
+    /** A Thing has zero-to-many HistoricalLocations. A HistoricalLocation has one-and-only-one Thing */
+    public var historicalLocations: [HistoricalLocation]?
+    /** A thing MAY have zero-to-many datastreams.\&quot; */
+    public var datastreams: [Datastream]?
+    /** link to related entities */
+    public var historicalLocationsiotNavigationLink: String?
+    /** link to related entities */
+    public var datastreamsiotNavigationLink: String?
+    /** link to related entities */
+    public var locationsiotNavigationLink: String?
     
 
     public init() {}
@@ -31,13 +37,16 @@ public class Thing: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["navigationLink"] = self.navigationLink
-        nillableDictionary["associationLink"] = self.associationLink
+        nillableDictionary["@iot.id"] = self.iotId
+        nillableDictionary["@iot.selLink"] = self.iotSelLink
         nillableDictionary["description"] = self.description
-        nillableDictionary["datastreams"] = self.datastreams?.encodeToJSON()
-        nillableDictionary["locations"] = self.locations?.encodeToJSON()
-        nillableDictionary["selfLink"] = self.selfLink
-        nillableDictionary["ID"] = self.ID
+        nillableDictionary["properties"] = self.properties
+        nillableDictionary["Locations"] = self.locations?.encodeToJSON()
+        nillableDictionary["HistoricalLocations"] = self.historicalLocations?.encodeToJSON()
+        nillableDictionary["Datastreams"] = self.datastreams?.encodeToJSON()
+        nillableDictionary["HistoricalLocations@iot.navigationLink"] = self.historicalLocationsiotNavigationLink
+        nillableDictionary["Datastreams@iot.navigationLink"] = self.datastreamsiotNavigationLink
+        nillableDictionary["Locations@iot.navigationLink"] = self.locationsiotNavigationLink
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

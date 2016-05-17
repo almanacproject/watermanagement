@@ -153,8 +153,9 @@ class LoginVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
             btnLogin.enabled = false
             txtPassword.enabled = false
             
-            validateUser(UserProfile(), error: nil)
+            // validateUser(UserProfile(), error: nil)
             // UserProfile.loadUserFromServer(password, andValidateUser: validateUser)
+            UserProfile.validateUser(validateUser)
         }
     }
     

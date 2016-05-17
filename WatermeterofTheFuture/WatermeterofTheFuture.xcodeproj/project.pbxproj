@@ -12,6 +12,7 @@
 		E97F74571CCE3606007F503A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74561CCE3606007F503A /* LoginVC.swift */; };
 		E97F74591CCE363A007F503A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74581CCE363A007F503A /* UserProfile.swift */; };
 		E97F745D1CCE3850007F503A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F745C1CCE3850007F503A /* GraphView.swift */; };
+		E993B29E1CD15F2B00138592 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993B29D1CD15F2B00138592 /* SettingsVC.swift */; };
 		E9B0F4941CCF58A70058193A /* WaterEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0F4931CCF58A70058193A /* WaterEventCell.swift */; };
 		E9B0F4961CCF5A000058193A /* AlertTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0F4951CCF5A000058193A /* AlertTVC.swift */; };
 		E9B0F49B1CCF60250058193A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0F49A1CCF60250058193A /* Alert.swift */; };
@@ -56,6 +57,7 @@
 		E97F74561CCE3606007F503A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E97F74581CCE363A007F503A /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E97F745C1CCE3850007F503A /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E993B29D1CD15F2B00138592 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		E9B0F4931CCF58A70058193A /* WaterEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterEventCell.swift; sourceTree = "<group>"; };
 		E9B0F4951CCF5A000058193A /* AlertTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTVC.swift; sourceTree = "<group>"; };
 		E9B0F49A1CCF60250058193A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 			name = "Assorted Files";
 			sourceTree = "<group>";
 		};
+		E993B29F1CD15F3000138592 /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				E993B29D1CD15F2B00138592 /* SettingsVC.swift */,
+			);
+			name = SettingsVC;
+			sourceTree = "<group>";
+		};
 		E9B0F4971CCF5A0A0058193A /* AlertTVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +221,7 @@
 				E9B0F4991CCF5A200058193A /* TodaysConsumptionVC */,
 				E9B0F4981CCF5A170058193A /* GraphVC */,
 				E9B0F4971CCF5A0A0058193A /* AlertTVC */,
+				E993B29F1CD15F3000138592 /* SettingsVC */,
 				E97F745A1CCE3642007F503A /* Model */,
 				E97F745B1CCE364D007F503A /* Assorted Files */,
 				E9D0AA2B1CC0BDAA0014309B /* Graphics */,
@@ -442,6 +453,7 @@
 				E97F74591CCE363A007F503A /* UserProfile.swift in Sources */,
 				E97F74571CCE3606007F503A /* LoginVC.swift in Sources */,
 				E9B0F4941CCF58A70058193A /* WaterEventCell.swift in Sources */,
+				E993B29E1CD15F2B00138592 /* SettingsVC.swift in Sources */,
 				E9D0A9FE1CC0BA5A0014309B /* GraphVC.swift in Sources */,
 				E9D0A9FA1CC0BA5A0014309B /* AppDelegate.swift in Sources */,
 				E9D0A9FC1CC0BA5A0014309B /* TodaysConsumptionVC.swift in Sources */,

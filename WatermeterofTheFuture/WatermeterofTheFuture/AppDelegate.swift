@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import AeroGearOAuth2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,18 +24,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("didFinishLaunchingWithOptions")
         initializeNotificationServices()
-        
+                
         return true
     }
     
+    //func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+    //    print("Started")
+    //    return true
+    //}
+    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        print("Application: \(application)")
+        print("Source: \(sourceApplication)")
+        print("URL: \(url)")
+        
+        if let myName = url.absoluteString as String! where myName.containsString("dk.alexandra.almanac.watermeterofthefuture://oauth2Callback") {
+            let notification = NSNotification(name: AGAppLaunchedWithURLNotification, object:nil, userInfo:[UIApplicationLaunchOptionsURLKey:url])
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+            print("Notofication posted")
+            return true
+        } else {
+            return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        }
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Reset counter for notification badges
         application.applicationIconBadgeNumber = 0
-
+        
         FBSDKAppEvents.activateApp()
     }
     
@@ -52,15 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("User Registered!!!! \(deviceToken)")
-        // let deviceTokenStr = convertDeviceTokenToString(deviceToken)
-        // print(deviceTokenStr)
         
         let HUBLISTENACCESS = "Endpoint=sb://watermeterofthefuture.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=QnMgdYYGr03u8XBS0WbLQwr0cMMxqpJQILY12luSPNY="
         let HUBNAME = "ALMANAC"
         
         let hub = SBNotificationHub(connectionString:HUBLISTENACCESS, notificationHubPath:HUBNAME)
         
-        let tagArray: [AnyObject] = ["ALMANAC", "pub", "gitte"]
+        let tagArray: [AnyObject] = ["ALMANAC", "pub", "watermeterid","joao"]
         let deviceTags: NSSet = NSSet(array: tagArray);
         
         let templateBodyAPNS = "{\"aps\": { \"alert\": \"$(message)\", \"badge\": \"#(count)\"}, \"eventtype\" : \"$(type)\" }"
@@ -97,16 +112,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completionHandler(UIBackgroundFetchResult.NoData)
         }
     }
+}
+
+extension NSURLRequest {
+    static func allowsAnyHTTPSCertificateForHost(host: String) -> Bool {
+        print("Allowing illegal stuff for: \(host)")
+        return true
+    }
+}
+
+extension NSURLConnection {
     
-//    private func convertDeviceTokenToString(deviceToken:NSData) -> String {
-//        //  Convert binary Device Token to a String (and remove the <,> and white space charaters).
-//        var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-//        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString("<", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-//        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-//        
-//        // Our API returns token in all uppercase, regardless how it was originally sent.
-//        // To make the two consistent, I am uppercasing the token string here.
-//        deviceTokenStr = deviceTokenStr.uppercaseString
-//        return deviceTokenStr
-//    }
 }
