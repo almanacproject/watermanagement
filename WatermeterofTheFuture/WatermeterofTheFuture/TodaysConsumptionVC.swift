@@ -10,6 +10,7 @@ import UIKit
 import Social
 import FBSDKShareKit
 import FBSDKCoreKit
+import OGCSensorThings
 
 
 class TodaysConsumptionVC: UIViewController {
@@ -40,6 +41,25 @@ class TodaysConsumptionVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        getLatest()
+    }
+    
+    func getLatest() {
+        print("Getting stuff")
+        // SwaggerClientAPI.basePath = "http://cnet006.cloudapp.net/SensorThings/"
+        
+        UserProfile.validateUser { (_, _) in
+            
+        }
+
+        SwaggerClientAPI.basePath = "http://almanac.alexandra.dk:8087"
+        // SwaggerClientAPI.customHeaders["Accept"] = "*/*"
+        
+        DefaultAPI.datastreamsGet(orderby: nil
+            , top: nil, skip: nil, filter: nil) { (data, error) in
+                print("Stuff \(data)")
+                print("Error: \(error)")
+        }
     }
     
     func updateUI() {

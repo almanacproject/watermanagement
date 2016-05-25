@@ -367,8 +367,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dQ-vs-Zjs">
                                 <rect key="frame" x="0.0" y="-30" width="600" height="630"/>
                             </scrollView>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pin kode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CjZ-p4-RqH">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pin kode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CjZ-p4-RqH">
                                 <rect key="frame" x="185" y="270" width="230" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="71I-yN-Fe2"/>
                                 </constraints>

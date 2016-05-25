@@ -12,8 +12,8 @@ import AeroGearHttp
 
 class UserProfile
 {
-    var userName: String?
-    var password: String?
+    var openIdClaim: OpenIDClaim?
+    var certificate: String?
     
     class func validateUser(andDoStuff: (UserProfile?, NSError?) -> Void) -> Void {
         // let http = Http()
@@ -25,14 +25,18 @@ class UserProfile
         let oauth2Module = AccountManager.addKeycloakAccount(keycloakConfig)
         // http.authzModule = oauth2Module
         oauth2Module.login {(accessToken: AnyObject?, claims: OpenIDClaim?, error: NSError?) in // [1]
-            // Do your own stuff here
-            if let error = error {
-                print("Failed")
-                print("\(error)")
-            }
-            //print("Success or fail: \(error)")
+
+            print("Success or fail: \(error)")
             print("Claim: \(claims)")
             print("Tokens: \(accessToken)")
+            
+            let profile = UserProfile()
+            profile.openIdClaim = claims
+            if let token = accessToken as! String! {
+                profile.certificate = token
+            }
+            
+            andDoStuff(profile, error)
         }
     }
 }
