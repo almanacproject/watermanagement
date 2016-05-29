@@ -241,8 +241,8 @@ class Decoders {
             Decoders.addDecoder(clazz: Location.self) { (source: AnyObject) -> Location in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Location()
-                instance.iotId = Decoders.decodeOptional(clazz: AnyObject.self, source: sourceDictionary["@iot.id"])
-                instance.iotSelfLink = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["@iot.selfLink"])
+                instance.iotId = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["@iot.id"])
+                instance.iotSelLink = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["@iot.selLink"])
                 instance.description = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["description"])
                 instance.encodingType = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["encodingType"])
                 instance.location = Decoders.decodeOptional(clazz: AnyObject.self, source: sourceDictionary["location"])

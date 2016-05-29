@@ -82,20 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AeroGearHttp/AeroGearHttp.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AeroGearOAuth2/AeroGearOAuth2.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JBChartView/JBChartView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/OGCSensorThings/OGCSensorThings.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Starscream/Starscream.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AeroGearHttp/AeroGearHttp.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AeroGearOAuth2/AeroGearOAuth2.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JBChartView/JBChartView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/OGCSensorThings/OGCSensorThings.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Starscream/Starscream.framework"
-fi

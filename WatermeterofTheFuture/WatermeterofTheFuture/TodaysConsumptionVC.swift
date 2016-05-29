@@ -48,17 +48,15 @@ class TodaysConsumptionVC: UIViewController {
         print("Getting stuff")
         // SwaggerClientAPI.basePath = "http://cnet006.cloudapp.net/SensorThings/"
         
-        UserProfile.validateUser { (_, _) in
+        //UserProfile.validateUser { (_, _) in
             
-        }
+        //}
 
-        SwaggerClientAPI.basePath = "http://almanac.alexandra.dk:8087"
+        SwaggerClientAPI.basePath = "http://almanac-lab.alexandra.dk/sm"
         // SwaggerClientAPI.customHeaders["Accept"] = "*/*"
         
-        DefaultAPI.datastreamsGet(orderby: nil
-            , top: nil, skip: nil, filter: nil) { (data, error) in
-                print("Stuff \(data)")
-                print("Error: \(error)")
+        DefaultAPI.datastreamsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data, error) in
+            print(data?.value?.count)
         }
     }
     

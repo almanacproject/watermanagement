@@ -37,36 +37,36 @@ class SettingsVC: UIViewController {
         SwaggerClientAPI.basePath = "http://ogcpilot.sensorup.com:8080/OGCSensorThings/v1.0/"
         
         
-        DefaultAPI.locationsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data, error) in
-            if let response = data?.value {
-                print("Aha, there be data: \(response.count)")
-                print("Id of first location: \(response.first?.iotId)")
-                
-                if let thing = response.first?.iotId {
-                    
-                    switch thing {
-                    case 0 as Int:
-                        print("zero as an Int")
-                    case 0 as Double:
-                        print("zero as a Double")
-                    case let someInt as Int:
-                        print("an integer value of \(someInt)")
-                    case let someDouble as Double where someDouble > 0:
-                        print("a positive double value of \(someDouble)")
-                    case is Double:
-                        print("some other double value that I don't want to print")
-                    case let someString as String:
-                        print("a string value of \"\(someString)\"")
-                    case let (x, y) as (Double, Double):
-                        print("an (x, y) point at \(x), \(y)")
-                    case let stringConverter as String -> String:
-                        print(stringConverter("Michael"))
-                    default:
-                        print("something else")
-                    }
-                }
-            }
-        }
+//        DefaultAPI.locationsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data, error) in
+//            if let response = data {
+//                print("Aha, there be data: \(response.count)")
+//                print("Id of first location: \(response.first?.iotId)")
+//                
+//                if let thing = response.first?.iotId {
+//                    
+//                    switch thing {
+//                    case 0 as Int:
+//                        print("zero as an Int")
+//                    case 0 as Double:
+//                        print("zero as a Double")
+//                    case let someInt as Int:
+//                        print("an integer value of \(someInt)")
+//                    case let someDouble as Double where someDouble > 0:
+//                        print("a positive double value of \(someDouble)")
+//                    case is Double:
+//                        print("some other double value that I don't want to print")
+//                    case let someString as String:
+//                        print("a string value of \"\(someString)\"")
+//                    case let (x, y) as (Double, Double):
+//                        print("an (x, y) point at \(x), \(y)")
+//                    case let stringConverter as String -> String:
+//                        print(stringConverter("Michael"))
+//                    default:
+//                        print("something else")
+//                    }
+//                }
+//            }
+//        }
     }
     
 }

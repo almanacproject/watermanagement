@@ -77,9 +77,7 @@ class AlamofireRequestBuilder<T>: RequestBuilder<T> {
 
         request.responseJSON(options: .AllowFragments) { response in
             managerStore.removeValueForKey(managerId)
-            debugPrint(response.request)
-            
-            
+
             if response.result.isFailure {
                 completion(response: nil, error: response.result.error)
                 return

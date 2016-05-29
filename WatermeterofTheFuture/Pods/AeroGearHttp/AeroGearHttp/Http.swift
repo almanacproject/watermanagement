@@ -344,10 +344,7 @@ public class Http {
         }
         
         func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-            // TODO: FIX THIS WHEN CERTIFICATES START TO WORK - Says Thomas Gilbert
-            var serverTrust = challenge.protectionSpace.serverTrust;
-            completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, NSURLCredential(forTrust: serverTrust!))
-        //completionHandler(.PerformDefaultHandling, nil)
+        completionHandler(.PerformDefaultHandling, nil)
         }
         
         func URLSessionDidFinishEventsForBackgroundURLSession(session: NSURLSession) {
