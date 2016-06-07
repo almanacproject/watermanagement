@@ -11,9 +11,9 @@ import Foundation
 public class HistoricalLocation: JSONEncodable {
 
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var iotId: String?
+    public var iotId: AnyObject?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var iotSelLink: String?
+    public var iotSelfLink: String?
     /** The time when the Thing is known at the Location. Datatype TM_Instant (ISO-8601 Time String) */
     public var time: String?
     /** A Location can have zero-to-many HistoricalLocations. One HistoricalLocation SHALL have one or many Locations. */
@@ -32,7 +32,7 @@ public class HistoricalLocation: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["@iot.id"] = self.iotId
-        nillableDictionary["@iot.selLink"] = self.iotSelLink
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["time"] = self.time
         nillableDictionary["Locations"] = self.locations?.encodeToJSON()
         nillableDictionary["Thing"] = self.thing?.encodeToJSON()

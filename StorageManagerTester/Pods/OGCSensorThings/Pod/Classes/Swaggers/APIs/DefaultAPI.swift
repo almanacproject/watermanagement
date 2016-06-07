@@ -18,7 +18,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry%20st_within(POLYGON%20((30%2010,%2010%2020,%2020%2040,%2040%2040,%2030%2010)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func datastreamsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: DatastreamsResponse?, error: ErrorType?) -> Void)) {
+    public class func datastreamsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: DatastreamsResponse?, error: ErrorType?) -> Void)) {
         datastreamsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -34,14 +34,15 @@ public class DefaultAPI: APIBase {
   "@iot.count" : 1.3579000000000001069366817318950779736042022705078125,
   "value" : [ {
     "resultTime" : "aeiou",
+    "@iot.selfLink" : "aeiou",
     "Thing@iot.navigationLink" : "aeiou",
     "Sensor@iot.navigationLink" : "aeiou",
     "unitOfMeasure" : "{}",
     "ObservedProperty" : {
+      "@iot.selfLink" : "aeiou",
       "Datastreams@iot.navigationLink" : "aeiou",
       "Datastreams" : [ "" ],
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "name" : "aeiou",
       "description" : "aeiou",
       "definition" : "aeiou"
@@ -50,8 +51,7 @@ public class DefaultAPI: APIBase {
     "phenomenonTime" : "aeiou",
     "ObservedProperty@iot.navigationLink" : "aeiou",
     "observationType" : "aeiou",
-    "@iot.id" : "aeiou",
-    "@iot.selLink" : "aeiou",
+    "@iot.id" : "{}",
     "observedArea" : "{}",
     "Observations@iot.navigationLink" : "aeiou",
     "Observations" : [ {
@@ -73,22 +73,22 @@ public class DefaultAPI: APIBase {
       "resultQuality" : "aeiou"
     } ],
     "Thing" : {
+      "@iot.selfLink" : "aeiou",
       "Datastreams@iot.navigationLink" : "aeiou",
       "Datastreams" : [ "" ],
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "Locations" : [ {
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.selfLink" : "aeiou",
+        "@iot.id" : "{}",
         "encodingType" : "aeiou",
         "Things" : [ "" ],
         "Things@iot.navigationLink" : "aeiou",
         "description" : "aeiou",
         "location" : "{}",
         "HistoricalLocations" : [ {
+          "@iot.selfLink" : "aeiou",
           "Thing@iot.navigationLink" : "aeiou",
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "Locations" : [ "" ],
           "time" : "aeiou",
           "Locations@iot.navigationLink" : "aeiou",
@@ -103,11 +103,11 @@ public class DefaultAPI: APIBase {
       "HistoricalLocations@iot.navigationLink" : "aeiou"
     },
     "Sensor" : {
+      "@iot.selfLink" : "aeiou",
       "metadata" : "aeiou",
       "Datastreams@iot.navigationLink" : "aeiou",
       "Datastreams" : [ "" ],
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "encodingType" : "aeiou",
       "description" : "aeiou"
     }
@@ -121,7 +121,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<DatastreamsResponse> 
      */
-    public class func datastreamsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<DatastreamsResponse> {
+    public class func datastreamsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<DatastreamsResponse> {
         let path = "/Datastreams"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -178,7 +178,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry st_within(POLYGON ((30 10, 10 20, 20 40, 40 40, 30 10)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func featureOfInterestsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: FeatureOfInterestsResponse?, error: ErrorType?) -> Void)) {
+    public class func featureOfInterestsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: FeatureOfInterestsResponse?, error: ErrorType?) -> Void)) {
         featureOfInterestsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -202,14 +202,15 @@ public class DefaultAPI: APIBase {
       "resultTime" : "2000-01-23T04:56:07.000+0000",
       "Datastream" : {
         "resultTime" : "aeiou",
+        "@iot.selfLink" : "aeiou",
         "Thing@iot.navigationLink" : "aeiou",
         "Sensor@iot.navigationLink" : "aeiou",
         "unitOfMeasure" : "{}",
         "ObservedProperty" : {
+          "@iot.selfLink" : "aeiou",
           "Datastreams@iot.navigationLink" : "aeiou",
           "Datastreams" : [ "" ],
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "name" : "aeiou",
           "description" : "aeiou",
           "definition" : "aeiou"
@@ -218,28 +219,27 @@ public class DefaultAPI: APIBase {
         "phenomenonTime" : "aeiou",
         "ObservedProperty@iot.navigationLink" : "aeiou",
         "observationType" : "aeiou",
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "observedArea" : "{}",
         "Observations@iot.navigationLink" : "aeiou",
         "Observations" : [ "" ],
         "Thing" : {
+          "@iot.selfLink" : "aeiou",
           "Datastreams@iot.navigationLink" : "aeiou",
           "Datastreams" : [ "" ],
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "Locations" : [ {
-            "@iot.id" : "aeiou",
-            "@iot.selLink" : "aeiou",
+            "@iot.selfLink" : "aeiou",
+            "@iot.id" : "{}",
             "encodingType" : "aeiou",
             "Things" : [ "" ],
             "Things@iot.navigationLink" : "aeiou",
             "description" : "aeiou",
             "location" : "{}",
             "HistoricalLocations" : [ {
+              "@iot.selfLink" : "aeiou",
               "Thing@iot.navigationLink" : "aeiou",
-              "@iot.id" : "aeiou",
-              "@iot.selLink" : "aeiou",
+              "@iot.id" : "{}",
               "Locations" : [ "" ],
               "time" : "aeiou",
               "Locations@iot.navigationLink" : "aeiou",
@@ -254,11 +254,11 @@ public class DefaultAPI: APIBase {
           "HistoricalLocations@iot.navigationLink" : "aeiou"
         },
         "Sensor" : {
+          "@iot.selfLink" : "aeiou",
           "metadata" : "aeiou",
           "Datastreams@iot.navigationLink" : "aeiou",
           "Datastreams" : [ "" ],
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "encodingType" : "aeiou",
           "description" : "aeiou"
         }
@@ -281,7 +281,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<FeatureOfInterestsResponse> 
      */
-    public class func featureOfInterestsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<FeatureOfInterestsResponse> {
+    public class func featureOfInterestsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<FeatureOfInterestsResponse> {
         let path = "/FeatureOfInterests"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -338,7 +338,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry st_within(POLYGON ((30 10, 10 20, 20 40, 40 40, 30 10)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func historicalLocationsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: HistoricalLocationsResponse?, error: ErrorType?) -> Void)) {
+    public class func historicalLocationsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: HistoricalLocationsResponse?, error: ErrorType?) -> Void)) {
         historicalLocationsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -353,25 +353,27 @@ public class DefaultAPI: APIBase {
   "@iot.nextLink" : "aeiou",
   "@iot.count" : 1.3579000000000001069366817318950779736042022705078125,
   "value" : [ {
+    "@iot.selfLink" : "aeiou",
     "Thing@iot.navigationLink" : "aeiou",
-    "@iot.id" : "aeiou",
-    "@iot.selLink" : "aeiou",
+    "@iot.id" : "{}",
     "Locations" : [ {
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.selfLink" : "aeiou",
+      "@iot.id" : "{}",
       "encodingType" : "aeiou",
       "Things" : [ {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ {
           "resultTime" : "aeiou",
+          "@iot.selfLink" : "aeiou",
           "Thing@iot.navigationLink" : "aeiou",
           "Sensor@iot.navigationLink" : "aeiou",
           "unitOfMeasure" : "{}",
           "ObservedProperty" : {
+            "@iot.selfLink" : "aeiou",
             "Datastreams@iot.navigationLink" : "aeiou",
             "Datastreams" : [ "" ],
-            "@iot.id" : "aeiou",
-            "@iot.selLink" : "aeiou",
+            "@iot.id" : "{}",
             "name" : "aeiou",
             "description" : "aeiou",
             "definition" : "aeiou"
@@ -380,8 +382,7 @@ public class DefaultAPI: APIBase {
           "phenomenonTime" : "aeiou",
           "ObservedProperty@iot.navigationLink" : "aeiou",
           "observationType" : "aeiou",
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "observedArea" : "{}",
           "Observations@iot.navigationLink" : "aeiou",
           "Observations" : [ {
@@ -404,17 +405,16 @@ public class DefaultAPI: APIBase {
           } ],
           "Thing" : "",
           "Sensor" : {
+            "@iot.selfLink" : "aeiou",
             "metadata" : "aeiou",
             "Datastreams@iot.navigationLink" : "aeiou",
             "Datastreams" : [ "" ],
-            "@iot.id" : "aeiou",
-            "@iot.selLink" : "aeiou",
+            "@iot.id" : "{}",
             "encodingType" : "aeiou",
             "description" : "aeiou"
           }
         } ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "Locations" : [ "" ],
         "description" : "aeiou",
         "Locations@iot.navigationLink" : "aeiou",
@@ -441,7 +441,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<HistoricalLocationsResponse> 
      */
-    public class func historicalLocationsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<HistoricalLocationsResponse> {
+    public class func historicalLocationsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<HistoricalLocationsResponse> {
         let path = "/HistoricalLocations"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -498,7 +498,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry%20st_within(POLYGON%20((30%2010,%2010%2020,%2020%2040,%2040%2040,%2030%2010)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func locationsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: LocationsResponse?, error: ErrorType?) -> Void)) {
+    public class func locationsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: LocationsResponse?, error: ErrorType?) -> Void)) {
         locationsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -513,21 +513,23 @@ public class DefaultAPI: APIBase {
   "@iot.nextLink" : "aeiou",
   "@iot.count" : 1.3579000000000001069366817318950779736042022705078125,
   "value" : [ {
-    "@iot.id" : "aeiou",
-    "@iot.selLink" : "aeiou",
+    "@iot.selfLink" : "aeiou",
+    "@iot.id" : "{}",
     "encodingType" : "aeiou",
     "Things" : [ {
+      "@iot.selfLink" : "aeiou",
       "Datastreams@iot.navigationLink" : "aeiou",
       "Datastreams" : [ {
         "resultTime" : "aeiou",
+        "@iot.selfLink" : "aeiou",
         "Thing@iot.navigationLink" : "aeiou",
         "Sensor@iot.navigationLink" : "aeiou",
         "unitOfMeasure" : "{}",
         "ObservedProperty" : {
+          "@iot.selfLink" : "aeiou",
           "Datastreams@iot.navigationLink" : "aeiou",
           "Datastreams" : [ "" ],
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "name" : "aeiou",
           "description" : "aeiou",
           "definition" : "aeiou"
@@ -536,8 +538,7 @@ public class DefaultAPI: APIBase {
         "phenomenonTime" : "aeiou",
         "ObservedProperty@iot.navigationLink" : "aeiou",
         "observationType" : "aeiou",
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "observedArea" : "{}",
         "Observations@iot.navigationLink" : "aeiou",
         "Observations" : [ {
@@ -560,24 +561,23 @@ public class DefaultAPI: APIBase {
         } ],
         "Thing" : "",
         "Sensor" : {
+          "@iot.selfLink" : "aeiou",
           "metadata" : "aeiou",
           "Datastreams@iot.navigationLink" : "aeiou",
           "Datastreams" : [ "" ],
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.id" : "{}",
           "encodingType" : "aeiou",
           "description" : "aeiou"
         }
       } ],
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "Locations" : [ "" ],
       "description" : "aeiou",
       "Locations@iot.navigationLink" : "aeiou",
       "HistoricalLocations" : [ {
+        "@iot.selfLink" : "aeiou",
         "Thing@iot.navigationLink" : "aeiou",
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "Locations" : [ "" ],
         "time" : "aeiou",
         "Locations@iot.navigationLink" : "aeiou",
@@ -601,7 +601,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<LocationsResponse> 
      */
-    public class func locationsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<LocationsResponse> {
+    public class func locationsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<LocationsResponse> {
         let path = "/Locations"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -658,7 +658,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry%20st_within(POLYGON%20((30%2010,%2010%2020,%2020%2040,%2040%2040,%2030%2010)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func observationsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: ObservationsResponse?, error: ErrorType?) -> Void)) {
+    public class func observationsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: ObservationsResponse?, error: ErrorType?) -> Void)) {
         observationsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -677,14 +677,15 @@ public class DefaultAPI: APIBase {
     "resultTime" : "2000-01-23T04:56:07.000+0000",
     "Datastream" : {
       "resultTime" : "aeiou",
+      "@iot.selfLink" : "aeiou",
       "Thing@iot.navigationLink" : "aeiou",
       "Sensor@iot.navigationLink" : "aeiou",
       "unitOfMeasure" : "{}",
       "ObservedProperty" : {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "name" : "aeiou",
         "description" : "aeiou",
         "definition" : "aeiou"
@@ -693,28 +694,27 @@ public class DefaultAPI: APIBase {
       "phenomenonTime" : "aeiou",
       "ObservedProperty@iot.navigationLink" : "aeiou",
       "observationType" : "aeiou",
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "observedArea" : "{}",
       "Observations@iot.navigationLink" : "aeiou",
       "Observations" : [ "" ],
       "Thing" : {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "Locations" : [ {
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.selfLink" : "aeiou",
+          "@iot.id" : "{}",
           "encodingType" : "aeiou",
           "Things" : [ "" ],
           "Things@iot.navigationLink" : "aeiou",
           "description" : "aeiou",
           "location" : "{}",
           "HistoricalLocations" : [ {
+            "@iot.selfLink" : "aeiou",
             "Thing@iot.navigationLink" : "aeiou",
-            "@iot.id" : "aeiou",
-            "@iot.selLink" : "aeiou",
+            "@iot.id" : "{}",
             "Locations" : [ "" ],
             "time" : "aeiou",
             "Locations@iot.navigationLink" : "aeiou",
@@ -729,11 +729,11 @@ public class DefaultAPI: APIBase {
         "HistoricalLocations@iot.navigationLink" : "aeiou"
       },
       "Sensor" : {
+        "@iot.selfLink" : "aeiou",
         "metadata" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "encodingType" : "aeiou",
         "description" : "aeiou"
       }
@@ -761,7 +761,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<ObservationsResponse> 
      */
-    public class func observationsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<ObservationsResponse> {
+    public class func observationsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<ObservationsResponse> {
         let path = "/Observations"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -818,7 +818,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry%20st_within(POLYGON%20((30%2010,%2010%2020,%2020%2040,%2040%2040,%2030%2010)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func observedPropertiesGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: ObservedPropertiesResponse?, error: ErrorType?) -> Void)) {
+    public class func observedPropertiesGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: ObservedPropertiesResponse?, error: ErrorType?) -> Void)) {
         observedPropertiesGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -833,9 +833,11 @@ public class DefaultAPI: APIBase {
   "@iot.nextLink" : "aeiou",
   "@iot.count" : 1.3579000000000001069366817318950779736042022705078125,
   "value" : [ {
+    "@iot.selfLink" : "aeiou",
     "Datastreams@iot.navigationLink" : "aeiou",
     "Datastreams" : [ {
       "resultTime" : "aeiou",
+      "@iot.selfLink" : "aeiou",
       "Thing@iot.navigationLink" : "aeiou",
       "Sensor@iot.navigationLink" : "aeiou",
       "unitOfMeasure" : "{}",
@@ -844,8 +846,7 @@ public class DefaultAPI: APIBase {
       "phenomenonTime" : "aeiou",
       "ObservedProperty@iot.navigationLink" : "aeiou",
       "observationType" : "aeiou",
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "observedArea" : "{}",
       "Observations@iot.navigationLink" : "aeiou",
       "Observations" : [ {
@@ -867,22 +868,22 @@ public class DefaultAPI: APIBase {
         "resultQuality" : "aeiou"
       } ],
       "Thing" : {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "Locations" : [ {
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.selfLink" : "aeiou",
+          "@iot.id" : "{}",
           "encodingType" : "aeiou",
           "Things" : [ "" ],
           "Things@iot.navigationLink" : "aeiou",
           "description" : "aeiou",
           "location" : "{}",
           "HistoricalLocations" : [ {
+            "@iot.selfLink" : "aeiou",
             "Thing@iot.navigationLink" : "aeiou",
-            "@iot.id" : "aeiou",
-            "@iot.selLink" : "aeiou",
+            "@iot.id" : "{}",
             "Locations" : [ "" ],
             "time" : "aeiou",
             "Locations@iot.navigationLink" : "aeiou",
@@ -897,17 +898,16 @@ public class DefaultAPI: APIBase {
         "HistoricalLocations@iot.navigationLink" : "aeiou"
       },
       "Sensor" : {
+        "@iot.selfLink" : "aeiou",
         "metadata" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "encodingType" : "aeiou",
         "description" : "aeiou"
       }
     } ],
-    "@iot.id" : "aeiou",
-    "@iot.selLink" : "aeiou",
+    "@iot.id" : "{}",
     "name" : "aeiou",
     "description" : "aeiou",
     "definition" : "aeiou"
@@ -921,7 +921,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<ObservedPropertiesResponse> 
      */
-    public class func observedPropertiesGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<ObservedPropertiesResponse> {
+    public class func observedPropertiesGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<ObservedPropertiesResponse> {
         let path = "/ObservedProperties"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -978,7 +978,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry st_within(POLYGON ((30 10, 10 20, 20 40, 40 40, 30 10)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func sensorsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: SensorsResponse?, error: ErrorType?) -> Void)) {
+    public class func sensorsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: SensorsResponse?, error: ErrorType?) -> Void)) {
         sensorsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -993,18 +993,20 @@ public class DefaultAPI: APIBase {
   "@iot.nextLink" : "aeiou",
   "@iot.count" : 1.3579000000000001069366817318950779736042022705078125,
   "value" : [ {
+    "@iot.selfLink" : "aeiou",
     "metadata" : "aeiou",
     "Datastreams@iot.navigationLink" : "aeiou",
     "Datastreams" : [ {
       "resultTime" : "aeiou",
+      "@iot.selfLink" : "aeiou",
       "Thing@iot.navigationLink" : "aeiou",
       "Sensor@iot.navigationLink" : "aeiou",
       "unitOfMeasure" : "{}",
       "ObservedProperty" : {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "name" : "aeiou",
         "description" : "aeiou",
         "definition" : "aeiou"
@@ -1013,8 +1015,7 @@ public class DefaultAPI: APIBase {
       "phenomenonTime" : "aeiou",
       "ObservedProperty@iot.navigationLink" : "aeiou",
       "observationType" : "aeiou",
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "observedArea" : "{}",
       "Observations@iot.navigationLink" : "aeiou",
       "Observations" : [ {
@@ -1036,22 +1037,22 @@ public class DefaultAPI: APIBase {
         "resultQuality" : "aeiou"
       } ],
       "Thing" : {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "Locations" : [ {
-          "@iot.id" : "aeiou",
-          "@iot.selLink" : "aeiou",
+          "@iot.selfLink" : "aeiou",
+          "@iot.id" : "{}",
           "encodingType" : "aeiou",
           "Things" : [ "" ],
           "Things@iot.navigationLink" : "aeiou",
           "description" : "aeiou",
           "location" : "{}",
           "HistoricalLocations" : [ {
+            "@iot.selfLink" : "aeiou",
             "Thing@iot.navigationLink" : "aeiou",
-            "@iot.id" : "aeiou",
-            "@iot.selLink" : "aeiou",
+            "@iot.id" : "{}",
             "Locations" : [ "" ],
             "time" : "aeiou",
             "Locations@iot.navigationLink" : "aeiou",
@@ -1067,8 +1068,7 @@ public class DefaultAPI: APIBase {
       },
       "Sensor" : ""
     } ],
-    "@iot.id" : "aeiou",
-    "@iot.selLink" : "aeiou",
+    "@iot.id" : "{}",
     "encodingType" : "aeiou",
     "description" : "aeiou"
   } ]
@@ -1081,7 +1081,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<SensorsResponse> 
      */
-    public class func sensorsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<SensorsResponse> {
+    public class func sensorsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<SensorsResponse> {
         let path = "/Sensors"
         let URLString = SwaggerClientAPI.basePath + path
         
@@ -1138,7 +1138,7 @@ public class DefaultAPI: APIBase {
      - parameter filter: (query) A URI with a &lt;strong&gt;$filter&lt;/strong&gt; query option identifies a subset of the entries from the collection of entries identified by the resource path of the URI. The subset is determined by selecting only the entries that satisfy the predicate expression specified by the &lt;strong&gt;$filter&lt;/strong&gt;. The value of the &lt;strong&gt;$filter&lt;/strong&gt; option is a Boolean expression. The expression language that is used in $filter operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or datetime values represented as datetime&#39;ISO 8601 time string&#39;.&lt;br/&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=ResultValue%20lt%2010.00&lt;/address&gt; returns all Observations whose ResultValue is less than 10.00. In addition, users may use the properties of linked entities in the $filter predicate. The following are examples of the possible uses of the $filter in the data model of the SensorThings service.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 1:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Observations?$filter=Datastream/ObservedProperty/UnitOfMeasurement%20eq%20&#39;Celsius&#39;&lt;/address&gt; returns all Observations whose UnitOfMeasurement (a property of ObservedProperty) is &#39;Celsius&#39;.&lt;/li&gt;&lt;strong&gt;Example 2:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Locations/Geometry%20st_within(POLYGON%20((30%2010,%2010%2020,%2020%2040,%2040%2040,%2030%2010)))&lt;/address&gt; returns Things whose current or past locations were in the polygon defined in the Well-Known Text (WKT).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Example 3:&lt;/strong&gt; &lt;address&gt;http://demo.student.geocens.ca:8080/SensorThings_V1.0/Things?$filter=Datastreams/Observations/FeatureOfInterest/ID%20eq20&#39;FOI_1&#39;%20and%20Datastreams/Observations/Time%20ge%20datetime&#39;2010-06-01T00:00:00Z&#39;%20and%20Datastreams/Observations/Time%20le%20datetime&#39;2010-07-01T00:00:00Z&#39;&lt;/address&gt; returns Things that have any observations on a feature of interest with a unique identifier equals to &#39;FOI_1&#39; in June 2010.&lt;/li&gt;&lt;/ul&gt;For more information on available query functions, look at: http://ogc-iot.github.io/ogc-iot-api/api.html#queryFunctions. Instead, for built-in filter operations look at http://ogc-iot.github.io/ogc-iot-api/api.html#filterOperations (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func thingsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?, completion: ((data: ThingsResponse?, error: ErrorType?) -> Void)) {
+    public class func thingsGet(orderby orderby: String?, top: Int?, skip: Int?, filter: String?, completion: ((data: ThingsResponse?, error: ErrorType?) -> Void)) {
         thingsGetWithRequestBuilder(orderby: orderby, top: top, skip: skip, filter: filter).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -1153,17 +1153,19 @@ public class DefaultAPI: APIBase {
   "@iot.nextLink" : "aeiou",
   "@iot.count" : 1.3579000000000001069366817318950779736042022705078125,
   "value" : [ {
+    "@iot.selfLink" : "aeiou",
     "Datastreams@iot.navigationLink" : "aeiou",
     "Datastreams" : [ {
       "resultTime" : "aeiou",
+      "@iot.selfLink" : "aeiou",
       "Thing@iot.navigationLink" : "aeiou",
       "Sensor@iot.navigationLink" : "aeiou",
       "unitOfMeasure" : "{}",
       "ObservedProperty" : {
+        "@iot.selfLink" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "name" : "aeiou",
         "description" : "aeiou",
         "definition" : "aeiou"
@@ -1172,8 +1174,7 @@ public class DefaultAPI: APIBase {
       "phenomenonTime" : "aeiou",
       "ObservedProperty@iot.navigationLink" : "aeiou",
       "observationType" : "aeiou",
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.id" : "{}",
       "observedArea" : "{}",
       "Observations@iot.navigationLink" : "aeiou",
       "Observations" : [ {
@@ -1196,29 +1197,28 @@ public class DefaultAPI: APIBase {
       } ],
       "Thing" : "",
       "Sensor" : {
+        "@iot.selfLink" : "aeiou",
         "metadata" : "aeiou",
         "Datastreams@iot.navigationLink" : "aeiou",
         "Datastreams" : [ "" ],
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "encodingType" : "aeiou",
         "description" : "aeiou"
       }
     } ],
-    "@iot.id" : "aeiou",
-    "@iot.selLink" : "aeiou",
+    "@iot.id" : "{}",
     "Locations" : [ {
-      "@iot.id" : "aeiou",
-      "@iot.selLink" : "aeiou",
+      "@iot.selfLink" : "aeiou",
+      "@iot.id" : "{}",
       "encodingType" : "aeiou",
       "Things" : [ "" ],
       "Things@iot.navigationLink" : "aeiou",
       "description" : "aeiou",
       "location" : "{}",
       "HistoricalLocations" : [ {
+        "@iot.selfLink" : "aeiou",
         "Thing@iot.navigationLink" : "aeiou",
-        "@iot.id" : "aeiou",
-        "@iot.selLink" : "aeiou",
+        "@iot.id" : "{}",
         "Locations" : [ "" ],
         "time" : "aeiou",
         "Locations@iot.navigationLink" : "aeiou",
@@ -1241,7 +1241,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<ThingsResponse> 
      */
-    public class func thingsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: Int?) -> RequestBuilder<ThingsResponse> {
+    public class func thingsGetWithRequestBuilder(orderby orderby: String?, top: Int?, skip: Int?, filter: String?) -> RequestBuilder<ThingsResponse> {
         let path = "/Things"
         let URLString = SwaggerClientAPI.basePath + path
         

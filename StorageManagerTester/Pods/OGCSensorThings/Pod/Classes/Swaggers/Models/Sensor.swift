@@ -11,9 +11,9 @@ import Foundation
 public class Sensor: JSONEncodable {
 
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var iotId: String?
+    public var iotId: AnyObject?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var iotSelLink: String?
+    public var iotSelfLink: String?
     /** The description of the Sensor entity. */
     public var description: String?
     /** The encoding type of the metadata property. Its value is one of the ValueCode enumeration (see Table 8-14 for the available ValueCode: application/pdf or  http://www.opengis.net/doc/IS/SensorML/2.0). */
@@ -32,7 +32,7 @@ public class Sensor: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["@iot.id"] = self.iotId
-        nillableDictionary["@iot.selLink"] = self.iotSelLink
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["description"] = self.description
         nillableDictionary["encodingType"] = self.encodingType
         nillableDictionary["metadata"] = self.metadata

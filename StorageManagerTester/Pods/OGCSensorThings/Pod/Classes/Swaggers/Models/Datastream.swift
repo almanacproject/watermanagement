@@ -12,9 +12,9 @@ import Foundation
 public class Datastream: JSONEncodable {
 
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var iotId: String?
+    public var iotId: AnyObject?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var iotSelLink: String?
+    public var iotSelfLink: String?
     /** This is the description of the datastream entity. The content is open to support other description languages. */
     public var description: String?
     /**  A JSON Object containing three key- value pairs. The name property presents the full name of the unitOfMeasurement; the symbol property shows the textual form of the unit symbol; and the definition contains the IRI defining the unitOfMeasurement. The values of these properties SHOULD follow the Unified Code for Unit of Measure (UCUM). */
@@ -51,7 +51,7 @@ public class Datastream: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["@iot.id"] = self.iotId
-        nillableDictionary["@iot.selLink"] = self.iotSelLink
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["description"] = self.description
         nillableDictionary["unitOfMeasure"] = self.unitOfMeasure
         nillableDictionary["observationType"] = self.observationType

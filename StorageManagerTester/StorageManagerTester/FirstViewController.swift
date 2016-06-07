@@ -16,8 +16,8 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var urlStepper: UIStepper!
     
-    var validUrls = ["http://almanac.alexandra.dk:8087",
-                     "http://almanac-lab.alexandra.dk:8087",
+    var validUrls = ["http://almanac.alexandra.dk/sm",
+                     "http://almanac-lab.alexandra.dk/sm",
                      "http://cnet006.cloudapp.net/SensorThings"]
     
     override func viewDidLoad() {
@@ -38,7 +38,6 @@ class FirstViewController: UIViewController {
             if let _ = error {
                 self.debugWindow.text = ("\(error.debugDescription)\n\(self.debugWindow.text)")
             } else {
-                
                 self.debugWindow.text = ("I actually counted: \(data?.value?.count)\n\(self.debugWindow.text)")
                 self.debugWindow.text = ("Found in the metadata: \(data?.iotCount)\n\(self.debugWindow.text)")
             }
