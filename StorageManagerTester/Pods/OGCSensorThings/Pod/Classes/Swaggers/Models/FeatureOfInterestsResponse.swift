@@ -9,11 +9,9 @@ import Foundation
 
 
 public class FeatureOfInterestsResponse: JSONEncodable {
-
     public var iotCount: Double?
     public var value: [FeatureOfInterest]?
     public var iotNextLink: String?
-    
 
     public init() {}
 

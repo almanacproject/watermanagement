@@ -9,9 +9,8 @@ import Foundation
 
 
 public class Location: JSONEncodable {
-
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var iotId: AnyObject?
+    public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
     public var iotSelfLink: String?
     /** This is the description of the thing entity. The content is open to accommodate changes to SensorML and to support other description languages. */
@@ -28,7 +27,6 @@ public class Location: JSONEncodable {
     public var thingsiotNavigationLink: String?
     /** link to related entities */
     public var historicalLocationsiotNavigationLink: String?
-    
 
     public init() {}
 

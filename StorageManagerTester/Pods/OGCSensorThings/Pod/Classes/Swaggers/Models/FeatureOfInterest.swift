@@ -9,24 +9,28 @@ import Foundation
 
 
 public class FeatureOfInterest: JSONEncodable {
-
+    /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
+    public var iotId: String?
+    /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
+    public var iotSelfLink: String?
     /** The description about the FeatureOfInterest. */
     public var description: String?
     /** The encoding type of the feature property. Its value is one of the ValueCode enumeration (see Table 8-6 for the available ValueCode, GeoJSON).  */
     public var encodingType: String?
     /** The detailed description of the feature. The data type is defined by encodingType. */
-    public var feature: String?
+    public var feature: AnyObject?
     /** An Observation observes on one-and-only-one FeatureOfInterest. One FeatureOfInterest could be observed by zero-to-many Observations. */
     public var observations: [Observation]?
     /** link to related entities */
     public var observationsiotNavigationLink: String?
-    
 
     public init() {}
 
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
+        nillableDictionary["@iot.id"] = self.iotId
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["description"] = self.description
         nillableDictionary["encodingType"] = self.encodingType
         nillableDictionary["feature"] = self.feature

@@ -9,11 +9,9 @@ import Foundation
 
 
 public class HistoricalLocationsResponse: JSONEncodable {
-
     public var iotCount: Double?
     public var value: [HistoricalLocation]?
     public var iotNextLink: String?
-    
 
     public init() {}
 

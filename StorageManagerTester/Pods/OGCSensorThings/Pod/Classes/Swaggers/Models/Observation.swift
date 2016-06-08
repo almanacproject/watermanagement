@@ -10,7 +10,10 @@ import Foundation
 
 /** An Observation is act of measuring or otherwise determining the value of a property [OGC and ISO 19156:2011]  */
 public class Observation: JSONEncodable {
-
+    /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
+    public var iotId: String?
+    /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
+    public var iotSelfLink: String?
     /** The time instant or period of when the Observation happens. Note: Many resource-constrained sensing devices do not have a clock. As a result, a client may omit phenonmenonTime when POST new Observations, even though phenonmenonTime is a mandatory property. When a SensorThings service receives a POST Observations without phenonmenonTime, the service SHALL assign the current server time to the value of the phenomenonTime. */
     public var phenomenonTime: String?
     /** The estimated value of an ObservedProperty from the Observation. */
@@ -29,13 +32,14 @@ public class Observation: JSONEncodable {
     public var datastreamiotNavigationLink: String?
     /** link to related entities */
     public var featureOfInterestiotNavigationLink: String?
-    
 
     public init() {}
 
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
+        nillableDictionary["@iot.id"] = self.iotId
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["phenomenonTime"] = self.phenomenonTime
         nillableDictionary["result"] = self.result
         nillableDictionary["resultTime"] = self.resultTime?.encodeToJSON()

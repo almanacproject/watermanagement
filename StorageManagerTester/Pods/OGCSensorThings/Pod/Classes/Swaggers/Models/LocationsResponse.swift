@@ -9,11 +9,9 @@ import Foundation
 
 
 public class LocationsResponse: JSONEncodable {
-
     public var iotCount: Double?
     public var value: [Location]?
     public var iotNextLink: String?
-    
 
     public init() {}
 

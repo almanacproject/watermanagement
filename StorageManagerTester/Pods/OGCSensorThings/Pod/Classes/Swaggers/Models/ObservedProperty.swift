@@ -9,9 +9,8 @@ import Foundation
 
 
 public class ObservedProperty: JSONEncodable {
-
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
-    public var iotId: AnyObject?
+    public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
     public var iotSelfLink: String?
     /**  The name of the ObservedProperty. */
@@ -24,7 +23,6 @@ public class ObservedProperty: JSONEncodable {
     public var datastreams: [Datastream]?
     /** link to related entities */
     public var datastreamsiotNavigationLink: String?
-    
 
     public init() {}
 
