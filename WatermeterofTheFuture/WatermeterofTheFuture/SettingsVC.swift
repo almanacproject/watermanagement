@@ -36,7 +36,7 @@ class SettingsVC: UIViewController {
         
         SwaggerClientAPI.basePath = "http://ogcpilot.sensorup.com:8080/OGCSensorThings/v1.0/"
         
-        
+//        
 //        DefaultAPI.locationsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data, error) in
 //            if let response = data {
 //                print("Aha, there be data: \(response.count)")

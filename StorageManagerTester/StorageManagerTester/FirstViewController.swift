@@ -18,7 +18,8 @@ class FirstViewController: UIViewController {
     
     var validUrls = ["http://almanac.alexandra.dk/sm",
                      "http://almanac-lab.alexandra.dk/sm",
-                     "http://cnet006.cloudapp.net/SensorThings"]
+                     "http://cnet006.cloudapp.net/SensorThings",
+                     "http://pg-api.sensorup.com/st-playground/proxy/v1.0"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +35,17 @@ class FirstViewController: UIViewController {
     @IBAction func executeQuery() {
         SwaggerClientAPI.basePath = urlTextField.text!
         
-        DefaultAPI.datastreamsGet(orderby: nil, top: nil, skip: nil, filter: nil) { (data, error) in
-            if let _ = error {
-                self.debugWindow.text = ("\(error.debugDescription)\n\(self.debugWindow.text)")
-            } else {
-                self.debugWindow.text = ("I actually counted: \(data?.value?.count)\n\(self.debugWindow.text)")
-                self.debugWindow.text = ("Found in the metadata: \(data?.iotCount)\n\(self.debugWindow.text)")
-            }
-        }
+        DefaultAPI.data
+        
+        
+//        DefaultAPI.datastreamsGet(orderby: nil, top: nil, skip: nil, filter: nil) { (data, error) in
+//            if let _ = error {
+//                self.debugWindow.text = ("\(error.debugDescription)\n\(self.debugWindow.text)")
+//            } else {
+//                self.debugWindow.text = ("I actually counted: \(data?.value?.count)\n\(self.debugWindow.text)")
+//                self.debugWindow.text = ("Found in the metadata: \(data?.iotCount)\n\(self.debugWindow.text)")
+//            }
+//        }
     }
     
     @IBAction func changeUrl(sender: UIStepper) {

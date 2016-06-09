@@ -17,12 +17,15 @@ class UserProfile
     
     class func validateUser(andDoStuff: (UserProfile?, NSError?) -> Void) -> Void {
         // let http = Http()
+        
         let keycloakConfig = KeycloakConfig(
             clientId: "vlc",
             host: "https://almanac-showcase.ismb.it:8543",
             realm: "ALMANAC-ISMB-SHOWCASE",
             isOpenIDConnect: true)
+        
         let oauth2Module = AccountManager.addKeycloakAccount(keycloakConfig)
+        
         // http.authzModule = oauth2Module
         oauth2Module.login {(accessToken: AnyObject?, claims: OpenIDClaim?, error: NSError?) in // [1]
 

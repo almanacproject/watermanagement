@@ -35,16 +35,16 @@ class AlertTVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 100
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath) as! WaterEventCell
 
-        cell.utilityTextLabel.text = "Thomas"
+        cell.utilityTextLabel.text = "Water leak"
         
         //cell.utilityTextLabel.text = alertList[indexPath.row].Title
-        //cell.alertTimeStamp?.text = NSDateFormatter.localizedStringFromDate(alertList[indexPath.row].TimeStamp!, dateStyle: .MediumStyle, timeStyle: .MediumStyle)
+        cell.alertTimeStamp?.text = NSDateFormatter.localizedStringFromDate(NSDate.init(timeIntervalSinceNow: -110000 * Double(drand48())), dateStyle: .MediumStyle, timeStyle: .MediumStyle)
 
         return cell
     }

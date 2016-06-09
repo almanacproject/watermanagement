@@ -62,6 +62,9 @@ class Decoders {
         if T.self is Int64.Type && source is NSNumber {
             return source.longLongValue as! T;
         }
+        if T.self is String.Type && source is NSNumber {
+            return source.stringValue as! T;
+        }
         if source is T {
             return source as! T
         }

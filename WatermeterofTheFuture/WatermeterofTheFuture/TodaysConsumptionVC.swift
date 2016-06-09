@@ -47,16 +47,18 @@ class TodaysConsumptionVC: UIViewController {
     func getLatest() {
         print("Getting stuff")
         // SwaggerClientAPI.basePath = "http://cnet006.cloudapp.net/SensorThings/"
+        // http://localhost:8080/Datastreams
         
         //UserProfile.validateUser { (_, _) in
             
         //}
 
         SwaggerClientAPI.basePath = "http://almanac-lab.alexandra.dk/sm"
-        // SwaggerClientAPI.customHeaders["Accept"] = "*/*"
+        SwaggerClientAPI.customHeaders["Accept"] = "*/*"
         
-        DefaultAPI.datastreamsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data, error) in
-            print(data?.value?.count)
+        DefaultAPI.datastreamsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data,error) in
+            print(error)
+            print(data)
         }
     }
     

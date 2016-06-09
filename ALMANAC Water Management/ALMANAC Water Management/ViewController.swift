@@ -8,6 +8,7 @@
 
 import Cocoa
 import MapKit
+import Alamofire
 
 class ViewController: NSViewController {
     
@@ -50,11 +51,18 @@ class ViewController: NSViewController {
         let postString = "{\"message\": \"\(region!) Alert - \(message)\",\"type\": \"LEAK\",\"count\": 1}"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
+        let _ = [
+            "ServiceBusNotification-Format": "template",
+            "ServiceBusNotification-Apns-Expiry": "2017-07-16T19:20+01:00",
+            "ServiceBusNotification-Tags": "ALMANAC",
+            "Authorization": "SharedAccessSignature sr=https%3a%2f%2fwatermeterofthefuture.servicebus.windows.net%3a443%2falmanac%2fmessages&sig=Wn%2BhC5Kh6XEgcy7p2wo4y68XTBD5qHqqPT8NTzmaYGM%3D&se=1493298826&skn=RootManageSharedAccessKey",
+            "Content-Type": "application/json;charset=utf-8"
+        ]
+        
         request.addValue("template", forHTTPHeaderField: "ServiceBusNotification-Format")
         request.addValue("2017-07-16T19:20+01:00", forHTTPHeaderField: "ServiceBusNotification-Apns-Expiry")
         request.addValue("ALMANAC", forHTTPHeaderField: "ServiceBusNotification-Tags")
         request.addValue("SharedAccessSignature sr=https%3a%2f%2fwatermeterofthefuture.servicebus.windows.net%3a443%2falmanac%2fmessages&sig=Wn%2BhC5Kh6XEgcy7p2wo4y68XTBD5qHqqPT8NTzmaYGM%3D&se=1493298826&skn=RootManageSharedAccessKey", forHTTPHeaderField: "Authorization")
-        
         request.addValue("application/json;charset=utf-8", forHTTPHeaderField: "Content-Type")
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in

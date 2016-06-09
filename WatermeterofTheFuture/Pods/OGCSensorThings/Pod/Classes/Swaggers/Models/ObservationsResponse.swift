@@ -9,11 +9,9 @@ import Foundation
 
 
 public class ObservationsResponse: JSONEncodable {
-
     public var iotCount: Double?
     public var value: [Observation]?
     public var iotNextLink: String?
-    
 
     public init() {}
 

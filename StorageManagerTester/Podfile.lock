@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (3.4.0)
-  - OGCSensorThings (0.2.4):
+  - OGCSensorThings (2.1.1):
     - Alamofire
 
 DEPENDENCIES:
@@ -8,7 +8,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  OGCSensorThings: d13433b694bf7d0137ad84a74686f4deb20eb12a
+  OGCSensorThings: dc45ed277903b5e6bdd682a7a9e97e0e035bb9b8
 
 PODFILE CHECKSUM: c216618c79dd601494001a61e3050bce660c503e
 

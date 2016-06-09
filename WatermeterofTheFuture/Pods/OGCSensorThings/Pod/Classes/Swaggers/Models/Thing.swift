@@ -9,7 +9,6 @@ import Foundation
 
 
 public class Thing: JSONEncodable {
-
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
     public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
@@ -30,7 +29,6 @@ public class Thing: JSONEncodable {
     public var datastreamsiotNavigationLink: String?
     /** link to related entities */
     public var locationsiotNavigationLink: String?
-    
 
     public init() {}
 

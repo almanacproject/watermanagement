@@ -10,7 +10,6 @@ import Foundation
 
 /** A datastream groups a collection of observations that are related in some way. The one constraint is that the observations in a datastream must measure the same observed property (i.e., one phenomenon). */
 public class Datastream: JSONEncodable {
-
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
     public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
@@ -43,7 +42,6 @@ public class Datastream: JSONEncodable {
     public var observedPropertyiotNavigationLink: String?
     /** link to related entities */
     public var observationsiotNavigationLink: String?
-    
 
     public init() {}
 

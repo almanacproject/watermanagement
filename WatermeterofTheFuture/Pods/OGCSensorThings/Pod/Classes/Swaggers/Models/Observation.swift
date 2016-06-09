@@ -10,7 +10,6 @@ import Foundation
 
 /** An Observation is act of measuring or otherwise determining the value of a property [OGC and ISO 19156:2011]  */
 public class Observation: JSONEncodable {
-
     /** The time instant or period of when the Observation happens. Note: Many resource-constrained sensing devices do not have a clock. As a result, a client may omit phenonmenonTime when POST new Observations, even though phenonmenonTime is a mandatory property. When a SensorThings service receives a POST Observations without phenonmenonTime, the service SHALL assign the current server time to the value of the phenomenonTime. */
     public var phenomenonTime: String?
     /** The estimated value of an ObservedProperty from the Observation. */
@@ -29,7 +28,6 @@ public class Observation: JSONEncodable {
     public var datastreamiotNavigationLink: String?
     /** link to related entities */
     public var featureOfInterestiotNavigationLink: String?
-    
 
     public init() {}
 
