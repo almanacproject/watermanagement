@@ -13,7 +13,6 @@
 		08436BEDE89A7270B8A769CCD79D01B4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E51A2A29D9772219A99BB4F399A06 /* Location.swift */; };
 		08DF92C398441AD329AE3D30BD424F0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
 		095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CAA7A211D34CF7D0AD952D202CAF4F /* Error.swift */; };
-		09AC080BF6D319F2039FB0A16EF7C29F /* Pods-WatermeterofTheFutureUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0B5E94E983B8B28970F87A13898D00C /* Pods-WatermeterofTheFutureUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EF0BF464B362DF2D7F9C73163CEC9EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
 		0F87D9B1128C3F3E049E0907E34B5224 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91681929813E65D5498405737C4412C4 /* APIs.swift */; };
 		10160ED5A5EB6477B72B969C4766647E /* ThingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F691330DE06EA20B02919BC4D2E18B3 /* ThingsResponse.swift */; };
@@ -31,7 +30,6 @@
 		30451573D3F8E74B220CBCC23A063A05 /* JBGradientLineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E3550F30F68BF4B8A4FDF75090FCB4AB /* JBGradientLineLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30BB82C5C4D0A9B960421E7C3AC08B96 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6447B99F6F3F235EEB5831FB6F8F698 /* Sensor.swift */; };
 		31D422D5428FDE976718870651F81749 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
-		33C64EE0DFECD99FB71D64C5278066EC /* Pods-WatermeterofTheFutureUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C3088BC486DAC053900EAC6C62C837 /* Pods-WatermeterofTheFutureUITests-dummy.m */; };
 		34BFAC18A269D413F0C10F40601D4095 /* AeroGearHttp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 098E069E2A5BF184C0B546CB06035230 /* AeroGearHttp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317FC07A368F3055340A8FC2878A530 /* NetworkReachabilityManager.swift */; };
 		39558D5153727541E1BEA890E8014D36 /* JBLineChartLinesView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA771FDC1093F5D990EE3F6CE17B9040 /* JBLineChartLinesView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,21 +52,16 @@
 		5CEEED05603620B5FE88C31F362E7512 /* JBLineChartDotView.h in Headers */ = {isa = PBXBuildFile; fileRef = 357EC298C57B113CB9193B4F9A94EAF8 /* JBLineChartDotView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C0FB63666E17F447ADFE4460AA19B7 /* Response.swift */; };
 		653C036B94D8543FB8FB1FDD38C7FFAA /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45EC144065F72B681A36196AD973971 /* RequestSerializer.swift */; };
-		697FE1B44546998C68E9D6DCDC30DF6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
-		6DE785F0B2E1ED7669E819E49BA7DBA9 /* AeroGearHttp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3EBD472F73B4372BF2B8D1AA7909B4 /* AeroGearHttp.framework */; };
 		6E2E49C60DD5F67F7209A6F06557AE19 /* OGCSensorThings-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD9FCE58009E1DD6F851D61F68FA6E7 /* OGCSensorThings-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EAAB8106D2D1D7625489FAF35223DBB /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C27601AFDD7A0F3CBC6D35823EFA /* AccountManager.swift */; };
 		7519BD107D2DF2EFF9E541DA4E0CD7F3 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4977D7389502384074D583B9485D44 /* JBBarChartView.m */; };
 		782A7F1F41909B35C11DC58AB58CAC3B /* JBGradientBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A654A8DAE049B0622FA7079A7F1247C /* JBGradientBarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13002BBFC5CC78215E01299D5D98DBF1 /* ServerTrustPolicy.swift */; };
 		7D68A3720CC3692C203FAAD224FAB14A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C400A0337F77705D57F27CD442710E /* Config.swift */; };
-		7DFA6E1016A58302BE2DB5C27864B0FE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D527EA7E3656735A8E045B0854A54292 /* Alamofire.framework */; };
-		808732A188AA04455B31A883A434A4A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
 		81A1CBDACA3848828BD69C8EFE2C8D7C /* AeroGearOAuth2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 567C985C09FE4C52D76B0BAE022D8880 /* AeroGearOAuth2-dummy.m */; };
 		82CE83B84A5A559972A93E174AD6411A /* OAuth2Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5868434365577B0A0E988D9762463B9E /* OAuth2Module.swift */; };
 		87F64913C032D619FDC00368B11C05B7 /* Pods-My Water-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A00CA775132C89C8335EF5E3F03B0B69 /* Pods-My Water-dummy.m */; };
 		8C207B123C54270F58E604A28E300A59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
-		8C8ABD2F9889BD19E6CD0357DB206F9E /* Pods-WatermeterofTheFutureTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC34DF0AB80E7AF511145B22F677DA62 /* Pods-WatermeterofTheFutureTests-dummy.m */; };
 		8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC380C9C997E32BCE98F7D673C02E7 /* Alamofire.swift */; };
 		91C09AC2A52ED69A27C8D923139A006F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15562492243571DC1BFE8471C27090 /* Foundation.framework */; };
 		9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7A1B706B9FA74ADCEED41804717B53 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,7 +70,6 @@
 		9769B82453864B392235EDCAA2D87D47 /* UntrustedMemoryOAuth2Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A34A537A2E6031722929449EEC9448 /* UntrustedMemoryOAuth2Session.swift */; };
 		99AC88D23F7F3D5E609540D9EED14123 /* OAuth2Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95D2EDC255FE5E9F509DA07803BB /* OAuth2Session.swift */; };
 		9ABAF6DF974ABB8098B3D3694E4A5D3F /* JBBarChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BBCAABFD4C5DAE62AB1E6A26A43F940 /* JBBarChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C01D38A691C0EB2C4073642265BF80A /* Pods-WatermeterofTheFutureTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35A3689C5EDEDB9D64478197B44ED1CA /* Pods-WatermeterofTheFutureTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C13EEEA25EC561DB50A694CCD345418 /* JBLineChartDotsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 737680C655A674A0E72A753184F2102F /* JBLineChartDotsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D205185FC3101950414F5F161EBAD20 /* Datastream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004E18AB6E7A07D125253B3AC3175BE /* Datastream.swift */; };
 		9DC067D75910862DEE14466AA2152734 /* JBLineChartPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 78458658EDF27340D9EE4C3726D21F69 /* JBLineChartPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -195,7 +187,6 @@
 		0593298CCF580A46D7ED2EA955570ECE /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		06181A68A5BD909A47245D60B56A6E70 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		066C36A563C9A052E99A6B27AE7F6F66 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		07B5336E0B3B851B7122F7A9A0B22F46 /* Pods_WatermeterofTheFutureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatermeterofTheFutureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		098E069E2A5BF184C0B546CB06035230 /* AeroGearHttp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AeroGearHttp-umbrella.h"; sourceTree = "<group>"; };
 		0B1F676C5559600726653C30CDE3E5C0 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Source/WebSocket.swift; sourceTree = "<group>"; };
 		13002BBFC5CC78215E01299D5D98DBF1 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
@@ -262,7 +253,6 @@
 		7B7A29E72B1B906097287934001227DC /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = AeroGearHttp/Utils.swift; sourceTree = "<group>"; };
 		7CA572570D58FF16D25DC4105E48B5D0 /* ObservedProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservedProperty.swift; path = Pod/Classes/Swaggers/Models/ObservedProperty.swift; sourceTree = "<group>"; };
 		7CEA92AFA5C3126428F47A8B0AEE2C21 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D3EBD472F73B4372BF2B8D1AA7909B4 /* AeroGearHttp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AeroGearHttp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6604B9A3BBC81685EB1DEE9A7880EB /* FeatureOfInterestsResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeatureOfInterestsResponse.swift; path = Pod/Classes/Swaggers/Models/FeatureOfInterestsResponse.swift; sourceTree = "<group>"; };
 		7ED1C44BE33188FEB89D87E8B660B297 /* OAuth2WebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuth2WebViewController.swift; path = AeroGearOAuth2/OAuth2WebViewController.swift; sourceTree = "<group>"; };
 		8317FC07A368F3055340A8FC2878A530 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
@@ -307,7 +297,6 @@
 		BC71502FB9A5B4545E894767BA6663C7 /* FacebookOAuth2Module.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FacebookOAuth2Module.swift; path = AeroGearOAuth2/FacebookOAuth2Module.swift; sourceTree = "<group>"; };
 		BD2691B92ED231D8BC7439BB25BF9EE9 /* JBLineChartLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartLine.m; path = Classes/Line/Models/JBLineChartLine.m; sourceTree = "<group>"; };
 		C0A9AED84EC0B6CE35F7F763D4058B1F /* Pods-My Water-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-My Water-resources.sh"; sourceTree = "<group>"; };
-		C0F65C6B5443F46926B6B660414D9B52 /* Pods_WatermeterofTheFutureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatermeterofTheFutureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12F4E4E0781F1830B6CEE428F167705 /* JBChartView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JBChartView-umbrella.h"; sourceTree = "<group>"; };
 		C45EC144065F72B681A36196AD973971 /* RequestSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestSerializer.swift; path = AeroGearHttp/RequestSerializer.swift; sourceTree = "<group>"; };
 		C57E798667B95BB081F84209C0E2DA6F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -320,7 +309,6 @@
 		CDE379F6350863B693DE076C01FCD678 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		D0C3201F3B0F73B7A3077C5FFBC48C6C /* OGCSensorThings-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OGCSensorThings-prefix.pch"; sourceTree = "<group>"; };
 		D1E938E44EE514ABB658424E35ED493E /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		D527EA7E3656735A8E045B0854A54292 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6447B99F6F3F235EEB5831FB6F8F698 /* Sensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sensor.swift; path = Pod/Classes/Swaggers/Models/Sensor.swift; sourceTree = "<group>"; };
 		D7D6FDB78457E517DB524B156530AD9A /* Pods-WatermeterofTheFutureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WatermeterofTheFutureUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D802B1D9D5983891439CE622C3D57F60 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -358,7 +346,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE785F0B2E1ED7669E819E49BA7DBA9 /* AeroGearHttp.framework in Frameworks */,
 				8C207B123C54270F58E604A28E300A59 /* Foundation.framework in Frameworks */,
 				C2E1AFA724DFDA82D234F25BC9D623FB /* Security.framework in Frameworks */,
 			);
@@ -388,27 +375,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91E618BBA23CFE32E7ED50DCC682C2C8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				697FE1B44546998C68E9D6DCDC30DF6B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92354C4124747095AC3F5A18762EF9D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				808732A188AA04455B31A883A434A4A0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		94670EEB6ED267A0769BC8647003319E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DFA6E1016A58302BE2DB5C27864B0FE /* Alamofire.framework in Frameworks */,
 				0EF0BF464B362DF2D7F9C73163CEC9EB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,8 +438,6 @@
 		562583A3424C0A2E476BE140356B437A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D3EBD472F73B4372BF2B8D1AA7909B4 /* AeroGearHttp.framework */,
-				D527EA7E3656735A8E045B0854A54292 /* Alamofire.framework */,
 				9AC4F6BEEF49FF63B30B8CEAF74F6658 /* iOS */,
 			);
 			name = Frameworks;
@@ -583,8 +551,6 @@
 				FEC7A030303F6175CEB50647130F88CA /* JBChartView.framework */,
 				8690556A870D91AECBAB5C3900FC6025 /* OGCSensorThings.framework */,
 				8D859A68E600D6C13E804960FD85569A /* Pods_My_Water.framework */,
-				C0F65C6B5443F46926B6B660414D9B52 /* Pods_WatermeterofTheFutureTests.framework */,
-				07B5336E0B3B851B7122F7A9A0B22F46 /* Pods_WatermeterofTheFutureUITests.framework */,
 				8A232441F5D59B4FF5078684EA0591BC /* Starscream.framework */,
 			);
 			name = Products;
@@ -836,22 +802,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEEA2C9ADDD05BD70BD5DED7534852D0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C01D38A691C0EB2C4073642265BF80A /* Pods-WatermeterofTheFutureTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EAAA99B874A3F6DEA64A299DA52CAED0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09AC080BF6D319F2039FB0A16EF7C29F /* Pods-WatermeterofTheFutureUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EFDF3B631BBB965A372347705CA14854 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -973,23 +923,6 @@
 			productReference = FEC7A030303F6175CEB50647130F88CA /* JBChartView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C66F8CC74F62FFB37643150E47A23CC6 /* Pods-WatermeterofTheFutureTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5FE5C284DD5F17AEAA911F0E0E67E07E /* Build configuration list for PBXNativeTarget "Pods-WatermeterofTheFutureTests" */;
-			buildPhases = (
-				2B1772C5348F79401C66AC00CB6EF464 /* Sources */,
-				91E618BBA23CFE32E7ED50DCC682C2C8 /* Frameworks */,
-				DEEA2C9ADDD05BD70BD5DED7534852D0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-WatermeterofTheFutureTests";
-			productName = "Pods-WatermeterofTheFutureTests";
-			productReference = C0F65C6B5443F46926B6B660414D9B52 /* Pods_WatermeterofTheFutureTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		EFB87D6A2FFCD82AB34B917C91C2F404 /* Starscream */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BA24CC4BA28D4705729691CA7F802DE /* Build configuration list for PBXNativeTarget "Starscream" */;
@@ -1005,23 +938,6 @@
 			name = Starscream;
 			productName = Starscream;
 			productReference = 8A232441F5D59B4FF5078684EA0591BC /* Starscream.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F401780230DF107A549AA8D53F91B302 /* Pods-WatermeterofTheFutureUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C2861B678BA36E09C6F4EE96F19080BD /* Build configuration list for PBXNativeTarget "Pods-WatermeterofTheFutureUITests" */;
-			buildPhases = (
-				FF9F38B9C15ADB2E51C3ADD590C3709B /* Sources */,
-				92354C4124747095AC3F5A18762EF9D8 /* Frameworks */,
-				EAAA99B874A3F6DEA64A299DA52CAED0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-WatermeterofTheFutureUITests";
-			productName = "Pods-WatermeterofTheFutureUITests";
-			productReference = 07B5336E0B3B851B7122F7A9A0B22F46 /* Pods_WatermeterofTheFutureUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1051,8 +967,6 @@
 				C3E15BBF3E72843A0D0EB56DB50F6018 /* JBChartView */,
 				A8AF66FE6A2DBFE59C77E7407E2C972E /* OGCSensorThings */,
 				A1E36448B1E282E5D74D825E70E7716C /* Pods-My Water */,
-				C66F8CC74F62FFB37643150E47A23CC6 /* Pods-WatermeterofTheFutureTests */,
-				F401780230DF107A549AA8D53F91B302 /* Pods-WatermeterofTheFutureUITests */,
 				EFB87D6A2FFCD82AB34B917C91C2F404 /* Starscream */,
 			);
 		};
@@ -1086,14 +1000,6 @@
 				E6FE690025C319DDD8680B01E600BF4E /* SensorsResponse.swift in Sources */,
 				FF3B71F3AD128DE5A51E89C4C6CBEB85 /* Thing.swift in Sources */,
 				10160ED5A5EB6477B72B969C4766647E /* ThingsResponse.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B1772C5348F79401C66AC00CB6EF464 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C8ABD2F9889BD19E6CD0357DB206F9E /* Pods-WatermeterofTheFutureTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1197,14 +1103,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF9F38B9C15ADB2E51C3ADD590C3709B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				33C64EE0DFECD99FB71D64C5278066EC /* Pods-WatermeterofTheFutureUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1259,39 +1157,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0075D866F8F342566B80F8017D0D92EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6D45AC53DC6240EDDC19250B75082D0 /* Pods-WatermeterofTheFutureTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WatermeterofTheFutureTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WatermeterofTheFutureTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		2634AD22EC8B95A1D33BB94E99FBAC13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1A3FFCABEFBD475BE8F55AE8768B603 /* Starscream.xcconfig */;
@@ -1350,39 +1215,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		2FD959BE4D8DBB8DA773119DDCB073B7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7D6FDB78457E517DB524B156530AD9A /* Pods-WatermeterofTheFutureUITests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WatermeterofTheFutureUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WatermeterofTheFutureUITests/Pods-WatermeterofTheFutureUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WatermeterofTheFutureUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		32AD5F8918CA8B349E4671410FA624C9 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1448,39 +1280,6 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		401631D116A828C4055420E9A03C42DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8488F474DDF9E4CE345B18780F2FEEC1 /* Pods-WatermeterofTheFutureUITests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WatermeterofTheFutureUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WatermeterofTheFutureUITests/Pods-WatermeterofTheFutureUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WatermeterofTheFutureUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1555,39 +1354,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		7E4DA10D546CD508C3158AD17B0938B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6078596DAE4055055327D7858215B1D8 /* Pods-WatermeterofTheFutureTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WatermeterofTheFutureTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WatermeterofTheFutureTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		921930B9ACE4505D9988EBB07BFEC851 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1939,15 +1705,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FE5C284DD5F17AEAA911F0E0E67E07E /* Build configuration list for PBXNativeTarget "Pods-WatermeterofTheFutureTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0075D866F8F342566B80F8017D0D92EB /* Debug */,
-				7E4DA10D546CD508C3158AD17B0938B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7D250A4FBD2D818A5784A7A94AEE4760 /* Build configuration list for PBXNativeTarget "OGCSensorThings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1971,15 +1728,6 @@
 			buildConfigurations = (
 				C00D0D30A75111AF0A0B78E7EBBDF6DE /* Debug */,
 				ED58FAE425B993744EAD2E75854070E7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C2861B678BA36E09C6F4EE96F19080BD /* Build configuration list for PBXNativeTarget "Pods-WatermeterofTheFutureUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2FD959BE4D8DBB8DA773119DDCB073B7 /* Debug */,
-				401631D116A828C4055420E9A03C42DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

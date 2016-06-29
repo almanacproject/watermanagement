@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F7969C6F2F9C43C5574826E /* Pods_WatermeterofTheFutureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27306A3E72DE865B3E6D8E94 /* Pods_WatermeterofTheFutureUITests.framework */; };
-		BC6D04A19729FBBFD5BF067C /* Pods_WatermeterofTheFutureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B7AB434A7AD4B05C4A5823 /* Pods_WatermeterofTheFutureTests.framework */; };
 		E91D64D11CC75B6000F6EF83 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D64D01CC75B6000F6EF83 /* Circle.swift */; };
 		E97F74571CCE3606007F503A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74561CCE3606007F503A /* LoginVC.swift */; };
 		E97F74591CCE363A007F503A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74581CCE363A007F503A /* UserProfile.swift */; };
@@ -27,33 +25,12 @@
 		E9D0AA011CC0BA5A0014309B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D0A9FF1CC0BA5A0014309B /* Main.storyboard */; };
 		E9D0AA031CC0BA5A0014309B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D0AA021CC0BA5A0014309B /* Assets.xcassets */; };
 		E9D0AA061CC0BA5A0014309B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D0AA041CC0BA5A0014309B /* LaunchScreen.storyboard */; };
-		E9D0AA111CC0BA5A0014309B /* WatermeterofTheFutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0AA101CC0BA5A0014309B /* WatermeterofTheFutureTests.swift */; };
-		E9D0AA1C1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0AA1B1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift */; };
 		E9D0AA2A1CC0BDA30014309B /* Glass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0AA291CC0BDA30014309B /* Glass.swift */; };
 		E9E4352F1CCF8ACE0012B59D /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E4352E1CCF8ACE0012B59D /* WindowsAzureMessaging.framework */; };
 		FFFE4B4084DE6849E3D60E5F /* Pods_My_Water.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C1DA3B28857C6EAF320E34 /* Pods_My_Water.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E9D0AA0D1CC0BA5A0014309B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9D0A9EE1CC0BA5A0014309B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9D0A9F51CC0BA5A0014309B;
-			remoteInfo = WatermeterofTheFuture;
-		};
-		E9D0AA181CC0BA5A0014309B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9D0A9EE1CC0BA5A0014309B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9D0A9F51CC0BA5A0014309B;
-			remoteInfo = WatermeterofTheFuture;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		27306A3E72DE865B3E6D8E94 /* Pods_WatermeterofTheFutureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatermeterofTheFutureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76B7AB434A7AD4B05C4A5823 /* Pods_WatermeterofTheFutureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatermeterofTheFutureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C1DA3B28857C6EAF320E34 /* Pods_My_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B0A1761414E160180834E4 /* Pods-WatermeterofTheFutureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatermeterofTheFutureUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatermeterofTheFutureUITests/Pods-WatermeterofTheFutureUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		879C81E09AB0ACE36363252D /* Pods-WatermeterofTheFutureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatermeterofTheFutureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,10 +58,8 @@
 		E9D0AA021CC0BA5A0014309B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9D0AA051CC0BA5A0014309B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9D0AA071CC0BA5A0014309B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9D0AA0C1CC0BA5A0014309B /* WatermeterofTheFutureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatermeterofTheFutureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D0AA101CC0BA5A0014309B /* WatermeterofTheFutureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermeterofTheFutureTests.swift; sourceTree = "<group>"; };
 		E9D0AA121CC0BA5A0014309B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9D0AA171CC0BA5A0014309B /* WatermeterofTheFutureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatermeterofTheFutureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D0AA1B1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermeterofTheFutureUITests.swift; sourceTree = "<group>"; };
 		E9D0AA1D1CC0BA5A0014309B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9D0AA291CC0BDA30014309B /* Glass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glass.swift; sourceTree = "<group>"; };
@@ -106,22 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9D0AA091CC0BA5A0014309B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BC6D04A19729FBBFD5BF067C /* Pods_WatermeterofTheFutureTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9D0AA141CC0BA5A0014309B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F7969C6F2F9C43C5574826E /* Pods_WatermeterofTheFutureUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -134,8 +93,6 @@
 				E9C1C8161CCE0A7A0050FF5D /* FBSDKShareKit.framework */,
 				E9C1C8131CCE00F00050FF5D /* Social.framework */,
 				78C1DA3B28857C6EAF320E34 /* Pods_My_Water.framework */,
-				76B7AB434A7AD4B05C4A5823 /* Pods_WatermeterofTheFutureTests.framework */,
-				27306A3E72DE865B3E6D8E94 /* Pods_WatermeterofTheFutureUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,8 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				E9D0A9F61CC0BA5A0014309B /* My Water.app */,
-				E9D0AA0C1CC0BA5A0014309B /* WatermeterofTheFutureTests.xctest */,
-				E9D0AA171CC0BA5A0014309B /* WatermeterofTheFutureUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,47 +251,6 @@
 			productReference = E9D0A9F61CC0BA5A0014309B /* My Water.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E9D0AA0B1CC0BA5A0014309B /* WatermeterofTheFutureTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9D0AA231CC0BA5A0014309B /* Build configuration list for PBXNativeTarget "WatermeterofTheFutureTests" */;
-			buildPhases = (
-				3DDD99384CD6DBAD85C2AEF8 /* [CP] Check Pods Manifest.lock */,
-				E9D0AA081CC0BA5A0014309B /* Sources */,
-				E9D0AA091CC0BA5A0014309B /* Frameworks */,
-				E9D0AA0A1CC0BA5A0014309B /* Resources */,
-				B46767B7596319F7215DAB38 /* [CP] Embed Pods Frameworks */,
-				BA9255F6E586B93917FE6681 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9D0AA0E1CC0BA5A0014309B /* PBXTargetDependency */,
-			);
-			name = WatermeterofTheFutureTests;
-			productName = WatermeterofTheFutureTests;
-			productReference = E9D0AA0C1CC0BA5A0014309B /* WatermeterofTheFutureTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E9D0AA161CC0BA5A0014309B /* WatermeterofTheFutureUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9D0AA261CC0BA5A0014309B /* Build configuration list for PBXNativeTarget "WatermeterofTheFutureUITests" */;
-			buildPhases = (
-				2D40EFE55E43A7BB23A95585 /* [CP] Check Pods Manifest.lock */,
-				E9D0AA131CC0BA5A0014309B /* Sources */,
-				E9D0AA141CC0BA5A0014309B /* Frameworks */,
-				E9D0AA151CC0BA5A0014309B /* Resources */,
-				891832314D5659A325A32E31 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9D0AA191CC0BA5A0014309B /* PBXTargetDependency */,
-			);
-			name = WatermeterofTheFutureUITests;
-			productName = WatermeterofTheFutureUITests;
-			productReference = E9D0AA171CC0BA5A0014309B /* WatermeterofTheFutureUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -359,14 +273,6 @@
 							};
 						};
 					};
-					E9D0AA0B1CC0BA5A0014309B = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = E9D0A9F51CC0BA5A0014309B;
-					};
-					E9D0AA161CC0BA5A0014309B = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = E9D0A9F51CC0BA5A0014309B;
-					};
 				};
 			};
 			buildConfigurationList = E9D0A9F11CC0BA5A0014309B /* Build configuration list for PBXProject "WatermeterofTheFuture" */;
@@ -383,8 +289,6 @@
 			projectRoot = "";
 			targets = (
 				E9D0A9F51CC0BA5A0014309B /* My Water */,
-				E9D0AA0B1CC0BA5A0014309B /* WatermeterofTheFutureTests */,
-				E9D0AA161CC0BA5A0014309B /* WatermeterofTheFutureUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -397,20 +301,6 @@
 				E9D0AA061CC0BA5A0014309B /* LaunchScreen.storyboard in Resources */,
 				E9D0AA031CC0BA5A0014309B /* Assets.xcassets in Resources */,
 				E9D0AA011CC0BA5A0014309B /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9D0AA0A1CC0BA5A0014309B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9D0AA151CC0BA5A0014309B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,36 +322,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Water/Pods-My Water-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D40EFE55E43A7BB23A95585 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3DDD99384CD6DBAD85C2AEF8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		742823F78300DC7A91C4EABB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,51 +335,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Water/Pods-My Water-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		891832314D5659A325A32E31 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatermeterofTheFutureUITests/Pods-WatermeterofTheFutureUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B46767B7596319F7215DAB38 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA9255F6E586B93917FE6681 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CADC36B721909D0F1DA2159A /* [CP] Check Pods Manifest.lock */ = {
@@ -559,36 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9D0AA081CC0BA5A0014309B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9D0AA111CC0BA5A0014309B /* WatermeterofTheFutureTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9D0AA131CC0BA5A0014309B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9D0AA1C1CC0BA5A0014309B /* WatermeterofTheFutureUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E9D0AA0E1CC0BA5A0014309B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9D0A9F51CC0BA5A0014309B /* My Water */;
-			targetProxy = E9D0AA0D1CC0BA5A0014309B /* PBXContainerItemProxy */;
-		};
-		E9D0AA191CC0BA5A0014309B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9D0A9F51CC0BA5A0014309B /* My Water */;
-			targetProxy = E9D0AA181CC0BA5A0014309B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E9D0A9FF1CC0BA5A0014309B /* Main.storyboard */ = {
@@ -742,56 +528,6 @@
 			};
 			name = Release;
 		};
-		E9D0AA241CC0BA5A0014309B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A460239FD67A00DEA2573C17 /* Pods-WatermeterofTheFutureTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WatermeterofTheFutureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dk.alexandra.almanac.WatermeterofTheFutureTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatermeterofTheFuture.app/WatermeterofTheFuture";
-			};
-			name = Debug;
-		};
-		E9D0AA251CC0BA5A0014309B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 879C81E09AB0ACE36363252D /* Pods-WatermeterofTheFutureTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WatermeterofTheFutureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dk.alexandra.almanac.WatermeterofTheFutureTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatermeterofTheFuture.app/WatermeterofTheFuture";
-			};
-			name = Release;
-		};
-		E9D0AA271CC0BA5A0014309B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85B0A1761414E160180834E4 /* Pods-WatermeterofTheFutureUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = WatermeterofTheFutureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dk.alexandra.almanac.WatermeterofTheFutureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = WatermeterofTheFuture;
-			};
-			name = Debug;
-		};
-		E9D0AA281CC0BA5A0014309B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A32219462AC8381A4D4D36B5 /* Pods-WatermeterofTheFutureUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = WatermeterofTheFutureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dk.alexandra.almanac.WatermeterofTheFutureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = WatermeterofTheFuture;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -809,24 +545,6 @@
 			buildConfigurations = (
 				E9D0AA211CC0BA5A0014309B /* Debug */,
 				E9D0AA221CC0BA5A0014309B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9D0AA231CC0BA5A0014309B /* Build configuration list for PBXNativeTarget "WatermeterofTheFutureTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9D0AA241CC0BA5A0014309B /* Debug */,
-				E9D0AA251CC0BA5A0014309B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9D0AA261CC0BA5A0014309B /* Build configuration list for PBXNativeTarget "WatermeterofTheFutureUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9D0AA271CC0BA5A0014309B /* Debug */,
-				E9D0AA281CC0BA5A0014309B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
