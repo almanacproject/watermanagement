@@ -1,6 +1,0 @@
-framework module Pods_WatermeterofTheFutureTests {
-  umbrella header "Pods-WatermeterofTheFutureTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -9,12 +9,3 @@ target 'My Water' do
    pod "Starscream"
    pod 'AeroGearOAuth2'
 end
-
-target 'WatermeterofTheFutureTests' do
-
-end
-
-target 'WatermeterofTheFutureUITests' do
-
-end
-

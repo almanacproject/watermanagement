@@ -29,26 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9D0AA0B1CC0BA5A0014309B"
-               BuildableName = "WatermeterofTheFutureTests.xctest"
-               BlueprintName = "WatermeterofTheFutureTests"
-               ReferencedContainer = "container:WatermeterofTheFuture.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9D0AA161CC0BA5A0014309B"
-               BuildableName = "WatermeterofTheFutureUITests.xctest"
-               BlueprintName = "WatermeterofTheFutureUITests"
-               ReferencedContainer = "container:WatermeterofTheFuture.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

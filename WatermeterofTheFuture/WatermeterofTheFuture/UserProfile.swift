@@ -8,7 +8,7 @@
 
 import Foundation
 import AeroGearOAuth2
-import AeroGearHttp
+//import AeroGearHttp
 
 class UserProfile
 {

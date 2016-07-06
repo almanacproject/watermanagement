@@ -1,5 +1,5 @@
 PODS:
-  - AeroGearHttp (0.5.1)
+  - AeroGearHttp (0.6.0)
   - AeroGearOAuth2 (0.5.1):
     - AeroGearHttp
   - Alamofire (3.4.1)
@@ -15,13 +15,13 @@ DEPENDENCIES:
   - Starscream
 
 SPEC CHECKSUMS:
-  AeroGearHttp: 9eb405b694aa9ac5daff842f68648f4a9fe0fa66
+  AeroGearHttp: e958f301cc2d1c7fbfd4b61af187ea3490040a48
   AeroGearOAuth2: 6f29d3fac8b78a0ff6d51b04c4ba1a02baed2e52
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   JBChartView: 08877554448ccf99c12625ad0ebce70588ff8318
   OGCSensorThings: b3e5c913b243f28decc364734d2b15e223acf793
   Starscream: d662732354b40dd19ed1ece3e3c44c80b536b83c
 
-PODFILE CHECKSUM: 15a5810514386086581fa82434f254bc7d508fb8
+PODFILE CHECKSUM: 1076831176ad2604daf3f776687318ba48ff4470
 
 COCOAPODS: 1.0.1

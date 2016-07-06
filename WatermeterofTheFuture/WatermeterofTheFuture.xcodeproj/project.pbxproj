@@ -32,11 +32,7 @@
 
 /* Begin PBXFileReference section */
 		78C1DA3B28857C6EAF320E34 /* Pods_My_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85B0A1761414E160180834E4 /* Pods-WatermeterofTheFutureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatermeterofTheFutureUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatermeterofTheFutureUITests/Pods-WatermeterofTheFutureUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		879C81E09AB0ACE36363252D /* Pods-WatermeterofTheFutureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatermeterofTheFutureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests.release.xcconfig"; sourceTree = "<group>"; };
 		921AFBEED63D6CE3CAA0F75B /* Pods-My Water.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Water.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Water/Pods-My Water.debug.xcconfig"; sourceTree = "<group>"; };
-		A32219462AC8381A4D4D36B5 /* Pods-WatermeterofTheFutureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatermeterofTheFutureUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatermeterofTheFutureUITests/Pods-WatermeterofTheFutureUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A460239FD67A00DEA2573C17 /* Pods-WatermeterofTheFutureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatermeterofTheFutureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatermeterofTheFutureTests/Pods-WatermeterofTheFutureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E57781722979958A2D4B816A /* Pods-My Water.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Water.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Water/Pods-My Water.release.xcconfig"; sourceTree = "<group>"; };
 		E91D64D01CC75B6000F6EF83 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		E97F74561CCE3606007F503A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -102,10 +98,6 @@
 			children = (
 				921AFBEED63D6CE3CAA0F75B /* Pods-My Water.debug.xcconfig */,
 				E57781722979958A2D4B816A /* Pods-My Water.release.xcconfig */,
-				A460239FD67A00DEA2573C17 /* Pods-WatermeterofTheFutureTests.debug.xcconfig */,
-				879C81E09AB0ACE36363252D /* Pods-WatermeterofTheFutureTests.release.xcconfig */,
-				85B0A1761414E160180834E4 /* Pods-WatermeterofTheFutureUITests.debug.xcconfig */,
-				A32219462AC8381A4D4D36B5 /* Pods-WatermeterofTheFutureUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
