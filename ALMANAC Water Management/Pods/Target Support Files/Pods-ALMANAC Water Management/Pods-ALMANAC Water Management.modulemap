@@ -1,0 +1,6 @@
+framework module Pods_ALMANAC_Water_Management {
+  umbrella header "Pods-ALMANAC Water Management-umbrella.h"
+
+  export *
+  module * { export * }
+}
