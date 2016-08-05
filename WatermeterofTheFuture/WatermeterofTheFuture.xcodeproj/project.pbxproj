@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B25634CB1D54AE300074C608 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25634CA1D54AE300074C608 /* Consumption.swift */; };
 		E91D64D11CC75B6000F6EF83 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D64D01CC75B6000F6EF83 /* Circle.swift */; };
 		E97F74571CCE3606007F503A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74561CCE3606007F503A /* LoginVC.swift */; };
 		E97F74591CCE363A007F503A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F74581CCE363A007F503A /* UserProfile.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		78C1DA3B28857C6EAF320E34 /* Pods_My_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		921AFBEED63D6CE3CAA0F75B /* Pods-My Water.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Water.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Water/Pods-My Water.debug.xcconfig"; sourceTree = "<group>"; };
+		B25634CA1D54AE300074C608 /* Consumption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
 		E57781722979958A2D4B816A /* Pods-My Water.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Water.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Water/Pods-My Water.release.xcconfig"; sourceTree = "<group>"; };
 		E91D64D01CC75B6000F6EF83 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		E97F74561CCE3606007F503A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				E9B0F49A1CCF60250058193A /* Alert.swift */,
 				E97F74581CCE363A007F503A /* UserProfile.swift */,
+				B25634CA1D54AE300074C608 /* Consumption.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				E9D0AA2A1CC0BDA30014309B /* Glass.swift in Sources */,
 				E97F74591CCE363A007F503A /* UserProfile.swift in Sources */,
 				E97F74571CCE3606007F503A /* LoginVC.swift in Sources */,
+				B25634CB1D54AE300074C608 /* Consumption.swift in Sources */,
 				E9B0F4941CCF58A70058193A /* WaterEventCell.swift in Sources */,
 				E993B29E1CD15F2B00138592 /* SettingsVC.swift in Sources */,
 				E9D0A9FE1CC0BA5A0014309B /* GraphVC.swift in Sources */,

@@ -12,7 +12,7 @@ public class ObservedProperty: JSONEncodable {
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
     public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var iotSelLink: String?
+    public var iotSelfLink: String?
     /**  The name of the ObservedProperty. */
     public var name: String?
     /** The IRI of the ObservedProperty. Dereferencing this IRI SHOULD result in a representation of the definition of the ObservedProperty. */
@@ -30,7 +30,7 @@ public class ObservedProperty: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["@iot.id"] = self.iotId
-        nillableDictionary["@iot.selLink"] = self.iotSelLink
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["name"] = self.name
         nillableDictionary["definition"] = self.definition
         nillableDictionary["description"] = self.description

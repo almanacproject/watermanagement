@@ -12,7 +12,6 @@ import FBSDKShareKit
 import FBSDKCoreKit
 import OGCSensorThings
 
-
 class TodaysConsumptionVC: UIViewController {
     
     @IBOutlet weak var consumptionWheel: Circle!
@@ -20,6 +19,21 @@ class TodaysConsumptionVC: UIViewController {
     
     @IBOutlet weak var facebookLike: UIButton!
     
+    var minWater: Double? {
+        didSet {
+            if let maxWater = maxWater, minWater = minWater {
+                waterConsumedToday = maxWater - minWater
+            }
+        }
+    }
+    
+    var maxWater: Double?  {
+        didSet {
+            if let maxWater = maxWater, minWater = minWater {
+                waterConsumedToday = maxWater - minWater
+            }
+        }
+    }
     
     var waterConsumedToday: Double = 0.0 {
         didSet {
@@ -46,19 +60,25 @@ class TodaysConsumptionVC: UIViewController {
     
     func getLatest() {
         print("Getting stuff")
-        // SwaggerClientAPI.basePath = "http://cnet006.cloudapp.net/SensorThings/"
-        // http://localhost:8080/Datastreams
         
-        //UserProfile.validateUser { (_, _) in
-            
-        //}
-
-        SwaggerClientAPI.basePath = "http://almanac-lab.alexandra.dk/sm"
-        SwaggerClientAPI.customHeaders["Accept"] = "*/*"
+        SwaggerClientAPI.basePath = "http://scratchpad.sensorup.com/OGCSensorThings/v1.0"
+        SwaggerClientAPI.customHeaders["Accept"] = "application/json"
+        SwaggerClientAPI.customHeaders["Content-type"] = "application/json"
         
-        DefaultAPI.datastreamsGet(orderby: nil, top: 10, skip: nil, filter: nil) { (data,error) in
-            print(error)
-            print(data)
+        Consumption.getMidnightConsumptionLevel("100149") { (consumption) in
+            if let consumption = consumption {
+                self.minWater = consumption
+            } else {
+                debugPrint("getTodaysCurrentConsumptionLevel: nil")
+            }
+        }
+        
+        Consumption.getTodaysCurrentConsumptionLevel("100149") { (consumption) in
+            if let consumption = consumption {
+                self.maxWater = consumption
+            } else {
+                debugPrint("getTodaysCurrentConsumptionLevel: nil")
+            }
         }
     }
     

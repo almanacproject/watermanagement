@@ -15,6 +15,8 @@ class UserProfile
     var openIdClaim: OpenIDClaim?
     var certificate: String?
     
+    var personalMeterId: String? = "100149"
+    
     class func validateUser(andDoStuff: (UserProfile?, NSError?) -> Void) -> Void {
         // let http = Http()
         

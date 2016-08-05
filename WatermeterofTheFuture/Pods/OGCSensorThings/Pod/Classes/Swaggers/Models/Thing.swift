@@ -12,7 +12,7 @@ public class Thing: JSONEncodable {
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
     public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var iotSelLink: String?
+    public var iotSelfLink: String?
     /** This is the description of the thing entity. The content is open to accommodate changes to SensorML and to support other description languages. */
     public var description: String?
     /** a set of additional properties specified for the object in the form \&quot;name\&quot;:\&quot;value\&quot; pair */
@@ -36,7 +36,7 @@ public class Thing: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["@iot.id"] = self.iotId
-        nillableDictionary["@iot.selLink"] = self.iotSelLink
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["description"] = self.description
         nillableDictionary["properties"] = self.properties
         nillableDictionary["Locations"] = self.locations?.encodeToJSON()

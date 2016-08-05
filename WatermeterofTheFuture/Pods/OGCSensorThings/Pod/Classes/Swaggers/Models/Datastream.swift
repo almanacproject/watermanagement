@@ -13,7 +13,7 @@ public class Datastream: JSONEncodable {
     /** ID is the system-generated identifier of an entity. ID is unique among the entities of the same entity type. */
     public var iotId: String?
     /** Self-Link is the absolute URL of an entity which is unique among all other entities. */
-    public var iotSelLink: String?
+    public var iotSelfLink: String?
     /** This is the description of the datastream entity. The content is open to support other description languages. */
     public var description: String?
     /**  A JSON Object containing three key- value pairs. The name property presents the full name of the unitOfMeasurement; the symbol property shows the textual form of the unit symbol; and the definition contains the IRI defining the unitOfMeasurement. The values of these properties SHOULD follow the Unified Code for Unit of Measure (UCUM). */
@@ -26,11 +26,8 @@ public class Datastream: JSONEncodable {
     public var phenomenonTime: String?
     /** The temporal bounding box of the result times of all observations belonging to this Datastream. TM_Period (ISO 8601 Time Interval) */
     public var resultTime: String?
-    /** A Thing has zero-to-many Datastreams. A Datastream entity SHALL only link to a Thing as a collection of Observations . */
     public var thing: Thing?
-    /** The Observations in a Datastream are performed by one-and-only-one Sensor. One Sensor MAY produce zero-to-many Observations in different Datastreams. */
     public var sensor: Sensor?
-    /** The observations of a datastream SHALL observe the same observedProperty. The observations of different datastreams MAY observe the same observedProperty. */
     public var observedProperty: ObservedProperty?
     /** A datastream has zero-to-many observations. One observation SHALL occur in one and only one Datastream. */
     public var observations: [Observation]?
@@ -49,7 +46,7 @@ public class Datastream: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["@iot.id"] = self.iotId
-        nillableDictionary["@iot.selLink"] = self.iotSelLink
+        nillableDictionary["@iot.selfLink"] = self.iotSelfLink
         nillableDictionary["description"] = self.description
         nillableDictionary["unitOfMeasure"] = self.unitOfMeasure
         nillableDictionary["observationType"] = self.observationType
