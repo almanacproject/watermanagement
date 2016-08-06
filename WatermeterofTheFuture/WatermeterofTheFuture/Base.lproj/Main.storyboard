@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y71-es-eEd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -74,6 +74,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="SrE-rB-XJs" appends="YES" id="yG5-Kr-0gH"/>
+                                    <outletCollection property="gestureRecognizers" destination="IWQ-Hr-GKS" appends="YES" id="ryM-Qg-EXY"/>
+                                    <outletCollection property="gestureRecognizers" destination="uu4-33-Uq8" appends="YES" id="1A2-46-rNA"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -101,6 +103,7 @@
                     <tabBarItem key="tabBarItem" title="Today" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="consumptionLabel" destination="wm0-cU-Njg" id="YTf-QX-YyL"/>
+                        <outlet property="consumptionTitle" destination="dEY-5Q-Xu3" id="GCI-w4-R6F"/>
                         <outlet property="consumptionWheel" destination="AOK-jY-VSA" id="ifv-F8-6D5"/>
                         <outlet property="facebookLike" destination="l2c-Z5-RHH" id="yOf-mw-UWS"/>
                     </connections>
@@ -111,6 +114,16 @@
                         <action selector="pressWheel:" destination="9pv-A4-QxB" id="c9U-Tq-kOu"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="IWQ-Hr-GKS">
+                    <connections>
+                        <action selector="swipeDates:" destination="9pv-A4-QxB" id="QtW-Q7-fq7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="uu4-33-Uq8">
+                    <connections>
+                        <action selector="swipeDates:" destination="9pv-A4-QxB" id="lR1-d7-nma"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="847" y="-429"/>
         </scene>
@@ -216,7 +229,7 @@
                                         <rect key="frame" x="0.0" y="22" width="560" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gEs-so-sP9" id="SKI-RF-eHX">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="68.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leak" translatesAutoresizingMaskIntoConstraints="NO" id="n4X-mO-n8L">

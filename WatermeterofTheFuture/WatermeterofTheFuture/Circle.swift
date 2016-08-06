@@ -16,7 +16,7 @@ let NoOfGlasses = 10
     @IBInspectable var fillLevel: Double = 0.4 {
         didSet {
             if fillLevel < 0 || fillLevel > 1 {
-                fillLevel = 0.5
+                //fillLevel = 0.5
             }
             setNeedsDisplay()
         }

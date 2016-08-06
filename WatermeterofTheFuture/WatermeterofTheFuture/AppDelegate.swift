@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import AeroGearOAuth2
+import OGCSensorThings
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,7 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("didFinishLaunchingWithOptions")
         initializeNotificationServices()
-                
+        
+        SwaggerClientAPI.basePath = "http://scratchpad.sensorup.com/OGCSensorThings/v1.0"
+        SwaggerClientAPI.customHeaders["Accept"] = "application/json"
+        SwaggerClientAPI.customHeaders["Content-type"] = "application/json"
+        
         return true
     }
     

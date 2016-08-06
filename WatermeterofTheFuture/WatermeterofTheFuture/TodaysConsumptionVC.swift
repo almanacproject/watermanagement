@@ -10,33 +10,23 @@ import UIKit
 import Social
 import FBSDKShareKit
 import FBSDKCoreKit
-import OGCSensorThings
 
 class TodaysConsumptionVC: UIViewController {
     
     @IBOutlet weak var consumptionWheel: Circle!
     @IBOutlet weak var consumptionLabel: UILabel!
+    @IBOutlet weak var consumptionTitle: UILabel!
     
     @IBOutlet weak var facebookLike: UIButton!
     
-    var minWater: Double? {
-        didSet {
-            if let maxWater = maxWater, minWater = minWater {
-                waterConsumedToday = maxWater - minWater
-            }
-        }
-    }
+    var dateTracker: Int = 0;
     
-    var maxWater: Double?  {
-        didSet {
-            if let maxWater = maxWater, minWater = minWater {
-                waterConsumedToday = maxWater - minWater
-            }
-        }
-    }
+    var minWater: Double? = 0
+    var maxWater: Double? = 0
     
     var waterConsumedToday: Double = 0.0 {
         didSet {
+            debugPrint("Setting water consumed today: \(waterConsumedToday)")
             updateUI()
         }
     }
@@ -55,40 +45,82 @@ class TodaysConsumptionVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        dateTracker = 0;
+        updateUI()
         getLatest()
     }
     
     func getLatest() {
         print("Getting stuff")
         
-        SwaggerClientAPI.basePath = "http://scratchpad.sensorup.com/OGCSensorThings/v1.0"
-        SwaggerClientAPI.customHeaders["Accept"] = "application/json"
-        SwaggerClientAPI.customHeaders["Content-type"] = "application/json"
+        let group = dispatch_group_create()
         
-        Consumption.getMidnightConsumptionLevel("100149") { (consumption) in
+        dispatch_group_enter(group)
+        Consumption.getMidnightConsumptionLevel("100149", dateOffset: dateTracker) { (consumption) in
             if let consumption = consumption {
                 self.minWater = consumption
             } else {
+                self.minWater = nil
                 debugPrint("getTodaysCurrentConsumptionLevel: nil")
             }
+            dispatch_group_leave(group)
         }
         
-        Consumption.getTodaysCurrentConsumptionLevel("100149") { (consumption) in
+        dispatch_group_enter(group)
+        Consumption.getTodaysCurrentConsumptionLevel("100149", dateOffset: dateTracker) { (consumption) in
             if let consumption = consumption {
                 self.maxWater = consumption
             } else {
+                self.maxWater = nil
                 debugPrint("getTodaysCurrentConsumptionLevel: nil")
+            }
+            dispatch_group_leave(group)
+        }
+        
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            if let minWater = self.minWater, maxWater = self.maxWater {
+                self.waterConsumedToday = maxWater - minWater
+            } else {
+                self.waterConsumedToday = 0
             }
         }
     }
     
     func updateUI() {
+        switch dateTracker {
+        case 0:
+            self.consumptionTitle.text = "Consumption today"
+        case -1:
+            self.consumptionTitle.text = "Yesterday"
+        case -2:
+            self.consumptionTitle.text = "Day before yesterday"
+        default:
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .MediumStyle
+            
+            let dateString = formatter.stringFromDate(NSDate.addUnitToDate(.Day, number: dateTracker, date: NSDate()))
+            self.consumptionTitle.text = dateString
+        }
+        
         consumptionLabel.text = "\(waterConsumedToday)"
         consumptionWheel.fillLevel = waterConsumedToday / waterConsumptionAverage
     }
     
     @IBAction func pressWheel(sender: UITapGestureRecognizer) {
-        waterConsumedToday = round(Double.random(0, waterConsumptionAverage)*100)/100
+        // waterConsumedToday = round(Double.random(0, waterConsumptionAverage)*100)/100
+    }
+    
+    @IBAction func swipeDates(sender: UISwipeGestureRecognizer) {
+        
+        if sender.direction == UISwipeGestureRecognizerDirection.Right {
+            dateTracker = dateTracker - 1
+            print("Right Swipe Detected \(dateTracker)")
+        } else if dateTracker < 0{
+            dateTracker = dateTracker + 1
+            print("Left Swipe Detected \(dateTracker)")
+        }
+        
+        getLatest()
     }
     
     @IBAction func shareConsumption(sender: UIButton) {
