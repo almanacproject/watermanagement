@@ -114,9 +114,11 @@ class TodaysConsumptionVC: UIViewController {
         
         if sender.direction == UISwipeGestureRecognizerDirection.Right {
             dateTracker = dateTracker - 1
+            consumptionWheel.shake(-1.0)
             print("Right Swipe Detected \(dateTracker)")
         } else if dateTracker < 0{
             dateTracker = dateTracker + 1
+            consumptionWheel.shake(1.0)
             print("Left Swipe Detected \(dateTracker)")
         }
         
@@ -190,5 +192,16 @@ public extension CGFloat {
     /// SwiftRandom extension
     public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
         return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
+    }
+}
+
+extension UIView {
+    func shake(direction: Double) {
+        let shake = [-10.0, 10.0, -10.0, 10.0, -5.0, 5.0, -2.5, 2.5, 0.0 ].map{$0 * direction}
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.4
+        animation.values = shake
+        layer.addAnimation(animation, forKey: "shake")
     }
 }
