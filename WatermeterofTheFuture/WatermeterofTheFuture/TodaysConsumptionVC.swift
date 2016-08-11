@@ -16,6 +16,7 @@ class TodaysConsumptionVC: UIViewController {
     @IBOutlet weak var consumptionWheel: Circle!
     @IBOutlet weak var consumptionLabel: UILabel!
     @IBOutlet weak var consumptionTitle: UILabel!
+    @IBOutlet weak var consumptionAverage: UILabel!
     
     @IBOutlet weak var facebookLike: UIButton!
     
@@ -31,8 +32,9 @@ class TodaysConsumptionVC: UIViewController {
         }
     }
     
-    var waterConsumptionAverage: Double = 143.0 {
+    var waterConsumptionAverage: Double = 100.0 {
         didSet {
+            debugPrint("Setting avg consumed: \(waterConsumptionAverage)")
             updateUI()
         }
     }
@@ -46,13 +48,11 @@ class TodaysConsumptionVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dateTracker = 0;
-        updateUI()
         getLatest()
+        getAverage()
     }
     
     func getLatest() {
-        print("Getting stuff")
-        
         let group = dispatch_group_create()
         
         dispatch_group_enter(group)
@@ -86,6 +86,41 @@ class TodaysConsumptionVC: UIViewController {
         }
     }
     
+    func getAverage() {
+        let synchronousUpdateVariable = dispatch_queue_create("forAvgCalculation", DISPATCH_QUEUE_CONCURRENT)
+        var values = [Double]()
+        
+        let group = dispatch_group_create()
+        
+        for index in -30...1 {
+            dispatch_group_enter(group)
+            Consumption.getLatestConsumptionBefore("100149", date: NSDate.addUnitToDate(.Day, number: index, date: NSDate.getMidnight())) { (consumption) in
+                if let consumption = consumption {
+                    // Update in seperate queue
+                    dispatch_barrier_async(synchronousUpdateVariable) {
+                        debugPrint("Found value: \(consumption)")
+                        values.append(consumption)
+                    }
+                }
+                dispatch_group_leave(group)
+            }
+        }
+        
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            values = Array(Set(values)).sort()
+            
+            debugPrint("Values used for calculating average: \(values) / \(values.count)")
+            
+            if let avgMinWater = values.first, avgMaxWater = values.last{
+                self.waterConsumptionAverage = (avgMaxWater - avgMinWater) / Double(values.count)
+            } else {
+                self.waterConsumptionAverage = 0
+            }
+            debugPrint("Average is set to: \(self.waterConsumptionAverage)")
+        }
+    }
+    
+    
     func updateUI() {
         switch dateTracker {
         case 0:
@@ -103,7 +138,8 @@ class TodaysConsumptionVC: UIViewController {
         }
         
         consumptionLabel.text = "\(waterConsumedToday)"
-        consumptionWheel.fillLevel = waterConsumedToday / waterConsumptionAverage
+        consumptionWheel.fillLevel = min((waterConsumedToday / waterConsumptionAverage), 1)
+        consumptionAverage.text = "\(round(waterConsumptionAverage).description) litres"
     }
     
     @IBAction func pressWheel(sender: UITapGestureRecognizer) {
@@ -115,11 +151,9 @@ class TodaysConsumptionVC: UIViewController {
         if sender.direction == UISwipeGestureRecognizerDirection.Right {
             dateTracker = dateTracker - 1
             consumptionWheel.shake(-1.0)
-            print("Right Swipe Detected \(dateTracker)")
-        } else if dateTracker < 0{
+        } else if dateTracker < 0 {
             dateTracker = dateTracker + 1
             consumptionWheel.shake(1.0)
-            print("Left Swipe Detected \(dateTracker)")
         }
         
         getLatest()

@@ -18,8 +18,8 @@ public class Consumption {
         let upperBoundaryDayJson = NSDate.jsonDate(upperBoundaryDay)
         
         DefaultAPI.datastreamsDatastreamIdObservationsGet(datastreamId: datastreamId, orderby: "phenomenonTime asc", top: 1, skip: nil, filter: "phenomenonTime gt '\(dayInQuestionJson)' and phenomenonTime lt '\(upperBoundaryDayJson)'") { (data, error) in
-            print(data?.value?.first?.result)
-            print(data?.value?.first?.phenomenonTime)
+            //print(data?.value?.first?.result)
+            //print(data?.value?.first?.phenomenonTime)
             
             if let result = data?.value?.first?.result {
                 andDoStuff(Double(result))
@@ -38,10 +38,41 @@ public class Consumption {
         let upperBoundaryDayJson = NSDate.jsonDate(upperBoundaryDay)
         
         DefaultAPI.datastreamsDatastreamIdObservationsGet(datastreamId: datastreamId, orderby: "phenomenonTime desc", top: 1, skip: nil, filter: "phenomenonTime lt '\(upperBoundaryDayJson)' and phenomenonTime gt '\(dayInQuestionJson)'") { (data, error) in
-            print(data?.value?.first?.result)
+            //print(data?.value?.first?.result)
+            //print(data?.value?.first?.phenomenonTime)
+            
+            if let result = data?.value?.first?.result {
+                andDoStuff(Double(result))
+            } else {
+                andDoStuff(nil)
+            }
+        }
+    }
+    
+    public static func getFirstConsumptionSince(datastreamId: String, date: NSDate, andDoStuff: (Double?) -> Void) -> Void {
+        let dayInQuestionJson = NSDate.jsonDate(date)
+        
+        DefaultAPI.datastreamsDatastreamIdObservationsGet(datastreamId: datastreamId, orderby: "phenomenonTime asc", top: 1, skip: nil, filter: "phenomenonTime gt '\(dayInQuestionJson)'") { (data, error) in
+            print("getFirstConsumptionSince \(data?.value?.first?.result)")
             print(data?.value?.first?.phenomenonTime)
             
             if let result = data?.value?.first?.result {
+                andDoStuff(Double(result))
+            } else {
+                andDoStuff(nil)
+            }
+        }
+    }
+    
+    public static func getLatestConsumptionBefore(datastreamId: String, date: NSDate, andDoStuff: (Double?) -> Void) -> Void {
+        let dayInQuestionJson = NSDate.jsonDate(date)
+        
+        DefaultAPI.datastreamsDatastreamIdObservationsGet(datastreamId: datastreamId, orderby: "phenomenonTime desc", top: 1, skip: nil, filter: "phenomenonTime lt '\(dayInQuestionJson)'") { (data, error) in
+            //print("getLatestConsumptionBefore \(data?.value?.first?.result)")
+            //print(data?.value?.first?.phenomenonTime)
+            
+            if let result = data?.value?.first?.result {
+                debugPrint("Downloaded: \(result) for \(dayInQuestionJson)")
                 andDoStuff(Double(result))
             } else {
                 andDoStuff(nil)
@@ -59,10 +90,24 @@ public extension NSDate {
         return calendar.dateFromComponents(components)!
     }
     
+    public static func getMonth() -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        // Only extract YM and TZ
+        let components = calendar.components([.Year, .Month, .TimeZone], fromDate: NSDate())
+        
+        return calendar.dateFromComponents(components)!
+    }
+    
     public static func jsonDate(date: NSDate) -> String {
         let dateFor = NSDateFormatter()
         dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return dateFor.stringFromDate(date)
+    }
+    
+    public func jsonDate() -> String {
+        let dateFor = NSDateFormatter()
+        dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFor.stringFromDate(self)
     }
     
     public static func addUnitToDate(unitType: NSCalendarUnit, number: Int, date:NSDate) -> NSDate {

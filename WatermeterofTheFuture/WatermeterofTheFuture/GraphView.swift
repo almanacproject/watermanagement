@@ -3,7 +3,15 @@ import UIKit
 @IBDesignable class GraphView: UIView {
   
   //Weekly sample data
-  var graphPoints:[Int] = [4, 2, 6, 4, 5, 8, 3]
+    var graphPoints:[Int] = [0,0,0,0] {
+        didSet {
+            let min = graphPoints.minElement()
+            graphPoints = graphPoints.map({ (value) -> Int in
+                return value - min!
+            })
+            setNeedsDisplay()
+        }
+    }
   
   //1 - the properties for the gradient
     @IBInspectable var startColor: UIColor = UIColor.redColor() {
@@ -57,6 +65,10 @@ import UIKit
       [])
     
     //calculate the x point
+    
+    if graphPoints.count == 0 || graphPoints.minElement() == graphPoints.maxElement(){
+        return
+    }
     
     let margin:CGFloat = 20.0
     let columnXPoint = { (column:Int) -> CGFloat in
@@ -142,8 +154,6 @@ import UIKit
           size: CGSize(width: 5.0, height: 5.0)))
       circle.fill()
     }
-    
-    
     
     //Draw horizontal graph lines on the top of everything
     let linePath = UIBezierPath()
