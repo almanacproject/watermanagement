@@ -29,7 +29,7 @@ class GraphVC: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegat
         }
     }
     
-    var barchartModel = [100,66,32,45,23,0,0,23,45,32,66,100] {
+    var barchartModel = [60,63,37,56,45,18,15,23,0,0,0,0] {
         didSet {
             graphView.reloadData()
         }

@@ -11,7 +11,7 @@ import Social
 import FBSDKShareKit
 import FBSDKCoreKit
 
-class TodaysConsumptionVC: UIViewController {
+class TodaysConsumptionVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var consumptionWheel: Circle!
     @IBOutlet weak var consumptionLabel: UILabel!
@@ -19,6 +19,8 @@ class TodaysConsumptionVC: UIViewController {
     @IBOutlet weak var consumptionAverage: UILabel!
     
     @IBOutlet weak var facebookLike: UIButton!
+    
+    @IBOutlet weak var alertTable: UITableView!
     
     var dateTracker: Int = 0;
     
@@ -36,6 +38,13 @@ class TodaysConsumptionVC: UIViewController {
         didSet {
             debugPrint("Setting avg consumed: \(waterConsumptionAverage)")
             updateUI()
+        }
+    }
+    
+    
+    var alertList: [Alert] = [] {
+        didSet {
+            alertTable?.reloadData()
         }
     }
     
@@ -139,7 +148,7 @@ class TodaysConsumptionVC: UIViewController {
         
         consumptionLabel.text = "\(waterConsumedToday)"
         consumptionWheel.fillLevel = min((waterConsumedToday / waterConsumptionAverage), 1)
-        consumptionAverage.text = "\(round(waterConsumptionAverage).description) litres"
+        consumptionAverage.text = "Average consumption is: \(round(waterConsumptionAverage).description) litres"
     }
     
     @IBAction func pressWheel(sender: UITapGestureRecognizer) {
@@ -180,6 +189,27 @@ class TodaysConsumptionVC: UIViewController {
         FBSDKShareDialog.showFromViewController(self, withContent: content, delegate: nil)
         
         facebookLike.hidden = false
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath) as! WaterEventCell
+        
+        cell.utilityTextLabel.text = "Water leak"
+        
+        //cell.utilityTextLabel.text = alertList[indexPath.row].Title
+        cell.alertTimeStamp?.text = NSDateFormatter.localizedStringFromDate(NSDate.init(timeIntervalSinceNow: -110000 * Double(drand48())), dateStyle: .MediumStyle, timeStyle: .MediumStyle)
+        
+        return cell
     }
 }
 

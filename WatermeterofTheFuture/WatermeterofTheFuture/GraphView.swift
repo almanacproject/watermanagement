@@ -82,8 +82,8 @@ import UIKit
     
     // calculate the y point
     
-    let topBorder:CGFloat = 60
-    let bottomBorder:CGFloat = 50
+    let topBorder:CGFloat = 15
+    let bottomBorder:CGFloat = 10
     let graphHeight = height - topBorder - bottomBorder
     let maxValue = graphPoints.maxElement()
     let columnYPoint = { (graphPoint:Int) -> CGFloat in

@@ -48,6 +48,12 @@
                                             <rect key="frame" x="88" y="122" width="98" height="32"/>
                                         </variation>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average consumption is: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-H4-HAJ">
+                                        <rect key="frame" x="44" y="233" width="163" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -57,7 +63,11 @@
                                     <constraint firstItem="l2c-Z5-RHH" firstAttribute="centerX" secondItem="AOK-jY-VSA" secondAttribute="centerX" id="7S1-qU-2Bz"/>
                                     <constraint firstAttribute="width" secondItem="AOK-jY-VSA" secondAttribute="height" multiplier="1:1" id="FPN-Lq-wiE"/>
                                     <constraint firstItem="l2c-Z5-RHH" firstAttribute="width" secondItem="AOK-jY-VSA" secondAttribute="height" multiplier="9:46" id="FTH-bY-IDO"/>
+                                    <constraint firstAttribute="trailing" secondItem="oEM-H4-HAJ" secondAttribute="trailing" constant="43" id="PNQ-Oe-M7c"/>
+                                    <constraint firstItem="oEM-H4-HAJ" firstAttribute="centerX" secondItem="AOK-jY-VSA" secondAttribute="centerX" id="Pg6-dN-1hn"/>
                                     <constraint firstItem="wm0-cU-Njg" firstAttribute="width" secondItem="AOK-jY-VSA" secondAttribute="height" multiplier="90:250" id="ncr-gA-bBz"/>
+                                    <constraint firstItem="oEM-H4-HAJ" firstAttribute="centerY" secondItem="AOK-jY-VSA" secondAttribute="centerY" id="oyO-fr-MzI"/>
+                                    <constraint firstAttribute="bottom" secondItem="oEM-H4-HAJ" secondAttribute="bottom" id="raN-yf-tYm"/>
                                     <constraint firstItem="wm0-cU-Njg" firstAttribute="centerY" secondItem="AOK-jY-VSA" secondAttribute="centerY" id="vaF-cL-WNd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -71,34 +81,90 @@
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PNQ-Oe-M7c"/>
+                                        <exclude reference="oyO-fr-MzI"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="SrE-rB-XJs" appends="YES" id="yG5-Kr-0gH"/>
                                     <outletCollection property="gestureRecognizers" destination="IWQ-Hr-GKS" appends="YES" id="ryM-Qg-EXY"/>
                                     <outletCollection property="gestureRecognizers" destination="uu4-33-Uq8" appends="YES" id="1A2-46-rNA"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average the last 30 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjN-qY-Eyl">
-                                <rect key="frame" x="195" y="327" width="210" height="23"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-H4-HAJ">
-                                <rect key="frame" x="277" y="358" width="47" height="23"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RjL-r6-2V4">
+                                <rect key="frame" x="20" y="327" width="560" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlertCell" rowHeight="69" id="1Pi-ge-oTv" customClass="WaterEventCell" customModule="My_Water" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="560" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Pi-ge-oTv" id="gtV-SQ-I3p">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leak" translatesAutoresizingMaskIntoConstraints="NO" id="eB2-VQ-8YT">
+                                                    <rect key="frame" x="8" y="8" width="61" height="52"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="61" id="CHk-WA-TKd"/>
+                                                        <constraint firstAttribute="height" constant="47" id="Phr-3B-oGR"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Phr-3B-oGR"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text fra vandsystemet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ni-jb-I06">
+                                                    <rect key="frame" x="77" y="8" width="227" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="227" id="iAM-jk-5rM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidspunkt for alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDb-ck-u5M">
+                                                    <rect key="frame" x="77" y="36" width="227" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TDb-ck-u5M" firstAttribute="top" secondItem="0Ni-jb-I06" secondAttribute="bottom" constant="8" id="8Ft-wI-XuR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eB2-VQ-8YT" secondAttribute="bottom" id="OZn-N4-elB"/>
+                                                <constraint firstItem="0Ni-jb-I06" firstAttribute="leading" secondItem="eB2-VQ-8YT" secondAttribute="trailing" constant="8" id="W8j-a2-FEp"/>
+                                                <constraint firstItem="0Ni-jb-I06" firstAttribute="top" secondItem="gtV-SQ-I3p" secondAttribute="topMargin" id="WdA-Oa-PX0"/>
+                                                <constraint firstItem="TDb-ck-u5M" firstAttribute="width" secondItem="0Ni-jb-I06" secondAttribute="width" id="cxi-KZ-IEQ"/>
+                                                <constraint firstItem="eB2-VQ-8YT" firstAttribute="top" secondItem="gtV-SQ-I3p" secondAttribute="topMargin" id="qaH-Ke-UVc"/>
+                                                <constraint firstItem="eB2-VQ-8YT" firstAttribute="leading" secondItem="gtV-SQ-I3p" secondAttribute="leadingMargin" id="rcs-Im-ErQ"/>
+                                                <constraint firstItem="TDb-ck-u5M" firstAttribute="leading" secondItem="0Ni-jb-I06" secondAttribute="leading" id="rvx-SE-bbe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="alertTimeStamp" destination="TDb-ck-u5M" id="sVZ-os-QEY"/>
+                                            <outlet property="imageIcon" destination="eB2-VQ-8YT" id="Ivx-AC-1ta"/>
+                                            <outlet property="utilityTextLabel" destination="0Ni-jb-I06" id="J0f-V6-LFb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="XDg-Sz-xoJ"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="yhH-nr-PmH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xjN-qY-Eyl" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="3Ce-kt-fIx"/>
+                            <constraint firstItem="RjL-r6-2V4" firstAttribute="top" secondItem="AOK-jY-VSA" secondAttribute="bottom" constant="8" id="6eu-0o-Qsc"/>
                             <constraint firstItem="dEY-5Q-Xu3" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="6lz-uD-uih"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="RjL-r6-2V4" secondAttribute="leading" id="7tD-w9-if1"/>
                             <constraint firstItem="dEY-5Q-Xu3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="Dlz-ig-Ka7"/>
-                            <constraint firstItem="xjN-qY-Eyl" firstAttribute="top" secondItem="AOK-jY-VSA" secondAttribute="bottom" constant="8" id="Jkw-8W-UyP"/>
-                            <constraint firstItem="oEM-H4-HAJ" firstAttribute="top" secondItem="xjN-qY-Eyl" secondAttribute="bottom" constant="8" id="Oag-Qp-8sj"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="AOK-jY-VSA" secondAttribute="bottom" constant="8" symbolic="YES" id="aL7-8F-agy"/>
-                            <constraint firstItem="oEM-H4-HAJ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="kYy-8E-1Js"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RjL-r6-2V4" secondAttribute="trailing" id="gs3-e8-59i"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="RjL-r6-2V4" secondAttribute="bottom" constant="8" id="jAJ-Es-leu"/>
                             <constraint firstItem="AOK-jY-VSA" firstAttribute="top" secondItem="dEY-5Q-Xu3" secondAttribute="bottom" constant="8" id="nMt-rQ-3Z4"/>
                             <constraint firstItem="AOK-jY-VSA" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="25:60" id="qIs-J2-xfK"/>
                             <constraint firstItem="AOK-jY-VSA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="sdM-wn-0Xv"/>
@@ -117,6 +183,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="alertTable" destination="RjL-r6-2V4" id="U7T-nZ-Ia8"/>
                         <outlet property="consumptionAverage" destination="oEM-H4-HAJ" id="SA2-PT-Ixr"/>
                         <outlet property="consumptionLabel" destination="wm0-cU-Njg" id="YTf-QX-YyL"/>
                         <outlet property="consumptionTitle" destination="dEY-5Q-Xu3" id="GCI-w4-R6F"/>
@@ -183,7 +250,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyi-UB-3s6">
                                 <rect key="frame" x="268" y="336" width="65" height="26"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDt-WF-82h" customClass="GraphView" customModule="My_Water" customModuleProvider="target">
@@ -248,8 +315,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarms and alerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34d-fv-XIC">
+                                <rect key="frame" x="199" y="28" width="203" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gnw-0f-75y">
-                                <rect key="frame" x="20" y="28" width="560" height="523"/>
+                                <rect key="frame" x="20" y="69" width="560" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlertCell" rowHeight="69" id="gEs-so-sP9" customClass="WaterEventCell" customModule="My_Water" customModuleProvider="target">
@@ -313,13 +386,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gnw-0f-75y" firstAttribute="top" secondItem="59u-RJ-XHt" secondAttribute="bottom" constant="8" symbolic="YES" id="IZG-pV-nmB"/>
+                            <constraint firstItem="34d-fv-XIC" firstAttribute="centerX" secondItem="K3S-qO-AJf" secondAttribute="centerX" id="ATo-11-rf8"/>
+                            <constraint firstItem="34d-fv-XIC" firstAttribute="top" secondItem="59u-RJ-XHt" secondAttribute="bottom" constant="8" id="BJU-Wa-wf5"/>
                             <constraint firstItem="kSQ-ss-9Yd" firstAttribute="top" secondItem="gnw-0f-75y" secondAttribute="bottom" id="PG8-4o-ZsR"/>
                             <constraint firstItem="gnw-0f-75y" firstAttribute="leading" secondItem="K3S-qO-AJf" secondAttribute="leadingMargin" id="QLA-bR-28k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gnw-0f-75y" secondAttribute="trailing" id="Vcc-l8-Lkg"/>
+                            <constraint firstItem="gnw-0f-75y" firstAttribute="top" secondItem="34d-fv-XIC" secondAttribute="bottom" constant="8" id="u1f-Fg-QsP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Alerts" image="first_old" id="Ekt-0d-Qen"/>
+                    <tabBarItem key="tabBarItem" title="Alerts" image="alarm" id="Ekt-0d-Qen"/>
                     <connections>
                         <outlet property="alertTable" destination="gnw-0f-75y" id="68u-Cw-zb6"/>
                     </connections>
@@ -431,8 +506,8 @@
     </scenes>
     <resources>
         <image name="Leak" width="207" height="165"/>
+        <image name="alarm" width="22" height="22"/>
         <image name="first" width="25" height="25"/>
-        <image name="first_old" width="30" height="30"/>
         <image name="second" width="25" height="25"/>
         <image name="share-icon-1" width="1000" height="1000"/>
     </resources>
