@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A286a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -29,7 +29,7 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AOK-jY-VSA" customClass="Circle" customModule="My_Water" customModuleProvider="target">
                                 <rect key="frame" x="175" y="69" width="250" height="250"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-Z5-RHH">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-Z5-RHH">
                                         <rect key="frame" x="101" y="182" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="l2c-Z5-RHH" secondAttribute="height" multiplier="1:1" id="WYY-K6-Dmq"/>
@@ -49,8 +49,8 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average consumption is: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-H4-HAJ">
-                                        <rect key="frame" x="44" y="233" width="163" height="17"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <rect key="frame" x="30" y="230" width="190" height="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -94,7 +94,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RjL-r6-2V4">
-                                <rect key="frame" x="20" y="327" width="560" height="216"/>
+                                <rect key="frame" x="20" y="339" width="560" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlertCell" rowHeight="69" id="1Pi-ge-oTv" customClass="WaterEventCell" customModule="My_Water" customModuleProvider="target">
@@ -158,13 +158,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RjL-r6-2V4" firstAttribute="top" secondItem="AOK-jY-VSA" secondAttribute="bottom" constant="8" id="6eu-0o-Qsc"/>
+                            <constraint firstItem="RjL-r6-2V4" firstAttribute="top" secondItem="AOK-jY-VSA" secondAttribute="bottom" constant="20" id="6eu-0o-Qsc"/>
                             <constraint firstItem="dEY-5Q-Xu3" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="6lz-uD-uih"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RjL-r6-2V4" secondAttribute="leading" id="7tD-w9-if1"/>
                             <constraint firstItem="dEY-5Q-Xu3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="Dlz-ig-Ka7"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="AOK-jY-VSA" secondAttribute="bottom" constant="8" symbolic="YES" id="aL7-8F-agy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RjL-r6-2V4" secondAttribute="trailing" id="gs3-e8-59i"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="RjL-r6-2V4" secondAttribute="bottom" constant="8" id="jAJ-Es-leu"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="RjL-r6-2V4" secondAttribute="bottom" constant="8" symbolic="YES" id="jAJ-Es-leu"/>
                             <constraint firstItem="AOK-jY-VSA" firstAttribute="top" secondItem="dEY-5Q-Xu3" secondAttribute="bottom" constant="8" id="nMt-rQ-3Z4"/>
                             <constraint firstItem="AOK-jY-VSA" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="25:60" id="qIs-J2-xfK"/>
                             <constraint firstItem="AOK-jY-VSA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="sdM-wn-0Xv"/>

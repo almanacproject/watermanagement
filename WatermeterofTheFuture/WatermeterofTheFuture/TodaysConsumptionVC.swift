@@ -146,7 +146,7 @@ class TodaysConsumptionVC: UIViewController, UITableViewDelegate, UITableViewDat
             self.consumptionTitle.text = dateString
         }
         
-        consumptionLabel.text = "\(waterConsumedToday)"
+        consumptionLabel.text = "\(waterConsumedToday)l"
         consumptionWheel.fillLevel = min((waterConsumedToday / waterConsumptionAverage), 1)
         consumptionAverage.text = "Average consumption is: \(round(waterConsumptionAverage).description) litres"
     }
