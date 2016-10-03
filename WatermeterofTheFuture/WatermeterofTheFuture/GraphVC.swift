@@ -17,6 +17,8 @@ class GraphVC: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegat
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     
+    @IBOutlet weak var infomationViewHeadline: UILabel!
+    
     var leftLabelIdentifier = "Jan" {
         didSet {
             updateUI()
@@ -29,15 +31,23 @@ class GraphVC: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegat
         }
     }
     
-    var barchartModel = [60,63,37,56,45,18,15,23,0,0,0,0] {
+    var barchartModel = [0,0,0,0,0,0,0,0,0,0,0,0] {
         didSet {
             graphView.reloadData()
+            updateUI()
         }
     }
     
     var informationViewModel = [100,66,32,45,23,0,0,23,45,32,66,100] {
         didSet {
+            informationViewModel.sortInPlace()
             informationView.graphPoints = informationViewModel
+        }
+    }
+    
+    var monthselectionIndex = 0 {
+        didSet {
+            updateUI()
         }
     }
     
@@ -54,6 +64,10 @@ class GraphVC: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegat
         
         informationView.startColor = UIColor(red: 0.0745098, green: 0.745098, blue: 0.831373, alpha: 0.55205)
         informationView.endColor = UIColor(red: 0.627451, green: 0.627451, blue: 0.627451, alpha: 1)
+        
+        monthselectionIndex = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: NSDate()).month - 1
+        
+        loadGraphViewDetails(0)
 
         super.viewDidLoad()
     }
@@ -74,9 +88,10 @@ class GraphVC: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegat
         //rightLabel.shadowColor = UIColor.blackColor()
         //rightLabel.shadowOffset = CGSizeMake(0.0, -1.0)
         rightLabel.backgroundColor = UIColor.clearColor()
+        
+        infomationViewHeadline.text = "\(barchartModel[monthselectionIndex]) litres consumed"
 
         graphView.reloadDataAnimated(true)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -88,7 +103,63 @@ class GraphVC: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegat
         debugPrint(index)
         animateInsideInformationView()
         
+        monthselectionIndex = Int(index)
         loadInformationViewDetails(Int(index))
+    }
+    
+    func loadGraphViewDetails(yearOffset: Int) {
+        let synchronousUpdateVariable = dispatch_queue_create("wholeYearDownload", DISPATCH_QUEUE_CONCURRENT)
+        var beforeValues = Array(count: 13, repeatedValue: 0.0)
+        var afterValues = Array(count: 13, repeatedValue: 0.0)
+
+        let group = dispatch_group_create()
+       
+        let startDateOfYear = NSDate.addUnitToDate(.Year, number: -1*yearOffset, date: NSDate.getYear())
+        
+        for index in 0...12 {
+            dispatch_group_enter(group)
+            let date = NSDate.addUnitToDate(.Month, number: index, date: startDateOfYear).jsonDate()
+            Consumption.getFirstConsumptionSince("100149", date: NSDate.addUnitToDate(.Month, number: index, date: startDateOfYear)) { (consumption) in
+                if let consumption = consumption {
+                    // Update in seperate queue
+                    dispatch_barrier_async(synchronousUpdateVariable) {
+                        debugPrint("Found value: \(consumption) for date: \(date) at spot \(index)")
+                        beforeValues[index] = consumption
+                    }
+                }
+                dispatch_group_leave(group)
+            }
+            
+            dispatch_group_enter(group)
+            Consumption.getLatestConsumptionBefore("100149", date: NSDate.addUnitToDate(.Month, number: index, date: startDateOfYear)) { (consumption) in
+                if let consumption = consumption {
+                    // Update in seperate queue
+                    dispatch_barrier_async(synchronousUpdateVariable) {
+                        debugPrint("Found value: \(consumption) for date: \(date) at spot \(index)")
+                        afterValues[index] = consumption
+                    }
+                }
+                dispatch_group_leave(group)
+            }
+        }
+        
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            //values = values.sort()
+            debugPrint("BeforeValues downloaded for informationview: \(beforeValues) / \(beforeValues.count)")
+            debugPrint("AfterValues downloaded for informationview: \(afterValues) / \(afterValues.count)")
+
+            var result = Array(count: 12, repeatedValue: 0.0)
+            
+            for (index, element) in afterValues.enumerate() {
+                if index > 0 && element > 0 && beforeValues[index - 1] > 0 {
+                    result[index - 1] = (element - beforeValues[index - 1])
+                }
+            }
+            
+            self.barchartModel = result.map({ (number) -> Int in
+                return Int(number)
+            })
+        }
     }
     
     func loadInformationViewDetails(month: Int) {

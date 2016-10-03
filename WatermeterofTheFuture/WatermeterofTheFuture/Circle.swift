@@ -97,7 +97,7 @@ let NoOfGlasses = 10
         let context = UIGraphicsGetCurrentContext()
         
         //1 - save original state
-        CGContextSaveGState(context)
+        CGContextSaveGState(context!)
         outlineColor.setFill()
         
         let markerWidth:CGFloat = 5.0
@@ -111,20 +111,20 @@ let NoOfGlasses = 10
                 height: markerSize))
         
         //3 - move top left of context to the previous center position
-        CGContextTranslateCTM(context,
+        CGContextTranslateCTM(context!,
                               rect.width/2,
                               rect.height/2)
         
         for i in 1...NoOfGlasses {
             //4 - save the centred context
-            CGContextSaveGState(context)
+            CGContextSaveGState(context!)
             
             //5 - calculate the rotation angle
             let angle = arcLengthPerGlass * CGFloat(i) + minAngle - π/2
             
             //rotate and translate
-            CGContextRotateCTM(context, angle)
-            CGContextTranslateCTM(context,
+            CGContextRotateCTM(context!, angle)
+            CGContextTranslateCTM(context!,
                                   0,
                                   rect.height/2 - markerSize)
             
@@ -132,10 +132,10 @@ let NoOfGlasses = 10
             markerPath.fill()
             
             //7 - restore the centred context for the next rotate
-            CGContextRestoreGState(context)
+            CGContextRestoreGState(context!)
         }
         
         //8 - restore the original state in case of more painting
-        CGContextRestoreGState(context)
+        CGContextRestoreGState(context!)
     }
 }

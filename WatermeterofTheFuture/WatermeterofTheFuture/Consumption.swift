@@ -53,8 +53,8 @@ public class Consumption {
         let dayInQuestionJson = NSDate.jsonDate(date)
         
         DefaultAPI.datastreamsDatastreamIdObservationsGet(datastreamId: datastreamId, orderby: "phenomenonTime asc", top: 1, skip: nil, filter: "phenomenonTime gt '\(dayInQuestionJson)'") { (data, error) in
-            print("getFirstConsumptionSince \(data?.value?.first?.result)")
-            print(data?.value?.first?.phenomenonTime)
+            // print("getFirstConsumptionSince \(data?.value?.first?.result)")
+            // print(data?.value?.first?.phenomenonTime)
             
             if let result = data?.value?.first?.result {
                 andDoStuff(Double(result))
@@ -94,6 +94,14 @@ public extension NSDate {
         let calendar = NSCalendar.currentCalendar()
         // Only extract YM and TZ
         let components = calendar.components([.Year, .Month, .TimeZone], fromDate: NSDate())
+        
+        return calendar.dateFromComponents(components)!
+    }
+    
+    public static func getYear() -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        // Only extract YM and TZ
+        let components = calendar.components([.Year, .TimeZone], fromDate: NSDate())
         
         return calendar.dateFromComponents(components)!
     }

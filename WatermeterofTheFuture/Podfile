@@ -4,10 +4,10 @@ platform :ios, '9.3'
 use_frameworks!
 
 target 'My Water' do
-   pod 'JBChartView'
-   pod 'OGCSensorThings'
-   pod 'Starscream'
-   pod 'AeroGearOAuth2'
+   pod 'JBChartView', '~> 3.0.12'
+   pod 'OGCSensorThings', '~> 2.1.5'
+   pod 'AeroGearOAuth2', '~> 0.5.1'
+   pod 'Alamofire', '~> 3.5.0'
 end
 
 post_install do |installer|
