@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		80BE1F936805AFA6D3A9057B /* Pods-My Water.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Water.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Water/Pods-My Water.release.xcconfig"; sourceTree = "<group>"; };
 		B25634CA1D54AE300074C608 /* Consumption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
+		B2B61F451DAE5BA6006FC137 /* My Water.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Water.entitlements"; sourceTree = "<group>"; };
 		B2E78B4A1D65E3D200DC5D3B /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		BE70F15E9DE3898B03907ED1 /* Pods_My_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91D64D01CC75B6000F6EF83 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 		E9D0A9ED1CC0BA5A0014309B = {
 			isa = PBXGroup;
 			children = (
+				B2B61F451DAE5BA6006FC137 /* My Water.entitlements */,
 				E9D0A9F81CC0BA5A0014309B /* WatermeterofTheFuture */,
 				E9D0AA0F1CC0BA5A0014309B /* WatermeterofTheFutureTests */,
 				E9D0AA1A1CC0BA5A0014309B /* WatermeterofTheFutureUITests */,
@@ -500,6 +502,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "My Water.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 9;
@@ -527,6 +530,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "My Water.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 9;
