@@ -18,7 +18,8 @@ class UserProfile
     var personalMeterId: String? = "100149"
     
     class func validateUser(andDoStuff: (UserProfile?, NSError?) -> Void) -> Void {
-        // let http = Http()
+
+        andDoStuff(nil, nil);
         
         let keycloakConfig = KeycloakConfig(
             clientId: "vlc",
